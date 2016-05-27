@@ -7,7 +7,7 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "NODE_ENV=production webpack -p",
+    "build": "NODE_ENV=production webpack -p &&  mkdir dist/dist && mv dist/bundle.js dist/dist/bundle.js && cp index.html dist/index.html",
     "dev": "webpack-dev-server --hot --progress",
     "lint": "eslint .",
     "start": "npm run clean && npm run dev",
