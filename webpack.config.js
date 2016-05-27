@@ -36,6 +36,9 @@ module.exports = {
       loader: 'react-hot!babel!eslint-loader',
       exclude: /node_modules/
     }, {
+      test: /\.json$/,
+      loader: 'json-loader'
+    }, {
       test: /\.css$/,
       loader: 'style-loader!css-loader!sass-loader'
     }, {

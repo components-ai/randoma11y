@@ -35,6 +35,7 @@
     "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
     "jsdom": "^8.1.0",
+    "json-loader": "^0.5.4",
     "lodash": "^4.6.1",
     "node-sass": "^3.4.2",
     "random-a11y-combo": "^0.1.0",

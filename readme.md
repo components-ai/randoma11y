@@ -1,10 +1,15 @@
-# rj-new
+# a11y-combos
 
-The initial scaffold for rj.
+__Work in progress__
 
-##### TODO
+Iterate over, and vote on, a11y color combinations.
 
-- [x] Sass compilation and hotloading
-- [ ] A navigation element, ensure redux history is being tracked correctly
-- [x] An about container
-- [ ] Test the things with ava
+## Installation
+
+```sh
+git clone https://github.com/johnotander/a11y-combos.git
+cd a11y-combos
+npm i
+npm start
+open localhost:8080
+```
