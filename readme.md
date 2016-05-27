@@ -13,3 +13,7 @@ npm i
 npm start
 open localhost:8080
 ```
+
+## Notes
+
+- Alex made a badass layout with pretty colors -> <http://codepen.io/anon/pen/Vjwage>
