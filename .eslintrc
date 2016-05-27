@@ -1,0 +1,10 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": ["standard", "plugin:react/recommended"],
+  "plugins": [ "react", "standard", "promise" ]
+}
