@@ -32,16 +32,20 @@ const App = React.createClass({
         </header>
         <section className='cf bg-white'>
           <div className='fl w-100 w-50-ns pv4 ph4' style={{ backgroundColor: colorOne, color: colorTwo }}>
-            <code className='f4 f3-ns mb2 mb5-ns db'>{colorOne}</code>
-            <h3 className='f1 f-headline-l mv0'>Aa</h3>
+            <code className='f4 mb2 db fw6'>{colorOne}</code>
+            <code className='f5 mb2 db'>hsla: {colorOne}</code>
+            <code className='f5 mb2 mb4-ns db'>rgb: {colorOne}</code>
+            <h3 className='f1 f-headline-l mv0'>Aa Bb Cc</h3>
             <p className='lh-copy measure'>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
             </p>
           </div>
           <div className='fl w-100 w-50-ns pv4 ph4' style={{ backgroundColor: colorTwo, color: colorOne }}>
-            <code className='f4 f3-ns mb2 mb5-ns db'>{colorTwo}</code>
-            <h3 className='f1 f-headline-l mv0'>Aa</h3>
+            <code className='f4 fw6 mb2 db'>{colorTwo}</code>
+            <code className='f5 mb2 db'>hsla: {colorTwo}</code>
+            <code className='f5 mb2 mb4-ns db'>rgb: {colorTwo}</code>
+            <h3 className='f1 f-headline-l mv0'>Aa Bb Cc</h3>
             <p className='lh-copy measure'>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
@@ -51,8 +55,8 @@ const App = React.createClass({
         <div className='pa4 cf bg-white'>
           <div className='w-100 tc'>
             <button className='bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 bg-white fw6 ttu f6 tracked mr3 cursor' >Vote Up</button>
-            <button className='input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 dim bg-white fw6 ttu f6 tracked mr3 cursor' >Vote Down</button>
-            <button className='input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 dim bg-white fw6 ttu f6 tracked cursor' onClick={this.handleNewColorsClick}>Next</button>
+            <button className='bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 bg-white fw6 ttu f6 tracked mr3 cursor' >Vote Down</button>
+            <button className='bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 bg-white fw6 ttu f6 tracked cursor' onClick={this.handleNewColorsClick}>Next</button>
             <div className='tc'>
               <p className='measure fw1 center'>
                 The more you vote, the faster the robots learn.
