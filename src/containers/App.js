@@ -23,14 +23,41 @@ const App = React.createClass({
 
     return (
       <div>
-        <h1>a11y combos</h1>
-        <div style={{ backgroundColor: colorOne, padding: '2rem', color: colorTwo }}>
-          {colorOne}
+        <header style={{padding: '1rem'}}>
+          <h1>Accessible Color Combinations</h1>
+        </header>
+        <section className='cf'>
+          <div className='fl w-100 w-50-ns pv5 ph4' style={{ backgroundColor: colorOne, color: colorTwo }}>
+            <code className='f4 f3-ns mb5'>{colorOne}</code>
+            <h3 className="f1 f-headline-l mv0">Aa</h3>
+            <p className='lh-copy measure'>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+              vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+          <div className='fl w-100 w-50-ns pv5 ph4' style={{ backgroundColor: colorTwo, color: colorOne }}>
+            <code className='f4 f3-ns mb5'>{colorTwo}</code>
+            <h3 className="f1 f-headline-l mv0">Aa</h3>
+            <p className='lh-copy measure'>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+              tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+              vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+              no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            </p>
+          </div>
+        </section>
+        <div className='pa4 cf'>
+          <div className='w-100 tc'>
+            <button className='input-reset black ba b--black-20 ph3 pv2 br2 dim bg-white fw6 ttu f6 tracked mr3' >Vote Up</button>
+            <button className='input-reset black ba b--black-20 ph3 pv2 br2 dim bg-white fw6 ttu f6 tracked mr3' >Vote Down</button>
+            <button className='input-reset black ba b--black-20 ph3 pv2 br2 dim bg-white fw6 ttu f6 tracked' onClick={this.handleNewColorsClick}>Next</button>
+          </div>
         </div>
-        <div style={{ backgroundColor: colorTwo, padding: '2rem', color: colorOne }}>
-          {colorTwo}
-        </div>
-        <div onClick={this.handleNewColorsClick}>Next</div>
+        <footer className='ph4 pv4 bt b--black-10'>
+          Built by <span className='fw6'>@4lpine</span> and <span className='fw6'>@mrmrs_</span>
+        </footer>
       </div>
     )
   }
