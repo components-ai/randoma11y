@@ -4,3 +4,11 @@ html,
 body {
   min-height: 100%;
 }
+
+.cursor:hover {
+  cursor: pointer;
+}
+
+.bg-blue {
+  background-color: #55acee;
+}
