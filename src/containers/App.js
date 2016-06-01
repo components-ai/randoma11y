@@ -60,12 +60,21 @@ const App = React.createClass({
             </div>
           </div>
         </div>
-        <footer className='ph4 pt4 pb5 bt b--black-10 '>
-          <p className='mb3'>Built by <span className='fw6'>@4lpine</span> and <span className='fw6'>@mrmrs_</span></p>
-
-          <div className='pt3'>
-      <a href='https://twitter.com/share' className='f6 ttu fw6 link twitter-share-button bg-blue white br1 ph3 pv2' data-via='mrmrs_' data-size='large'>Tweet This</a>
+        <footer className='ph4 pt4 pb5 bt b--black-10 cf'>
+      <a href='https://twitter.com/share' className='dib ml3-ns fr-ns dim f6 ttu fw6 link mb4 twitter-share-button bg-blue white br1 ph3 pv2' data-via='mrmrs_' data-size='large'>Tweet This</a>
+          <p className='mt0 measure f4 lh-copy'>
+            <b className='fw6'>What is this?</b> An ongoing project to try and curate beautiful color palettes that are a11y friendly.
+            This app generates a random palette and allows you to vote the combination up or down.
+            We'll store the info and keep our api open.
+          </p>
+          <p className='mb3 f6 ttu tracked-normal gray'>
+            Built by <a href='http://twitter.com/4lpine' className='link gray dim fw6'>@4lpine</a> and <a href='http://twitter.com/mrmrs_' className='link gray dim fw6'>@mrmrs_</a>
+          </p>
+          <div className='pt3 cf'>
       </div>
+          <p className='mt5 gray'>
+            Related projects: <a href='//jxnblk.com/colorable' title='a11y contrast checker' className='link dim black fw6'>Colorable</a> <a href='//clrs.cc' title='A nicer color palette for the web.' className='dib ml2 link dim black fw6'>Colors</a>
+          </p>
         </footer>
       </div>
     )

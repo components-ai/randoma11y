@@ -12,3 +12,5 @@ body {
 .bg-blue {
   background-color: #55acee;
 }
+
+.tracked-normal { letter-spacing: .1em; }
