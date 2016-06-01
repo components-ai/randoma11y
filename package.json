@@ -12,7 +12,7 @@
     "dev": "webpack-dev-server --hot --progress",
     "lint": "eslint .",
     "start": "npm run clean && npm run dev",
-    "test": "ava test/**/*-test.js --verbose --require ./other/setup-ava-tests.js"
+    "test": "ava src/**/*-test.js --verbose --require ./other/setup-ava-tests.js"
   },
   "repository": "rj-cli/new",
   "license": "MIT",
@@ -62,7 +62,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
-    "ava": "^0.15.1",
+    "ava": "*",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-config-standard": "^5.3.1",
     "eslint-plugin-promise": "^1.3.1",
