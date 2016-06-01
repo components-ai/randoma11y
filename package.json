@@ -7,7 +7,8 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "NODE_ENV=production webpack -p &&  mkdir dist/dist && mv dist/bundle.js dist/dist/bundle.js && cp index.html dist/index.html",
+    "build": "NODE_ENV=production webpack -p &&  mkdir -p dist/dist && mv dist/bundle.js dist/dist/bundle.js && cp index.html dist/index.html",
+    "deploy": "cp -r dist/* ../a11y-combos-api/public",
     "dev": "webpack-dev-server --hot --progress",
     "lint": "eslint .",
     "start": "npm run clean && npm run dev",
@@ -38,7 +39,7 @@
     "json-loader": "^0.5.4",
     "lodash": "^4.13.1",
     "node-sass": "^3.7.0",
-    "random-a11y-combo": "^0.2.0",
+    "random-a11y-combo": "*",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
