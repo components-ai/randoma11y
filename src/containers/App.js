@@ -29,7 +29,7 @@ const App = React.createClass({
         <section className='cf'>
           <div className='fl w-100 w-50-ns pv5 ph4' style={{ backgroundColor: colorOne, color: colorTwo }}>
             <code className='f4 f3-ns mb5'>{colorOne}</code>
-            <h3 className="f1 f-headline-l mv0">Aa</h3>
+            <h3 className='f1 f-headline-l mv0'>Aa</h3>
             <p className='lh-copy measure'>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
@@ -39,7 +39,7 @@ const App = React.createClass({
           </div>
           <div className='fl w-100 w-50-ns pv5 ph4' style={{ backgroundColor: colorTwo, color: colorOne }}>
             <code className='f4 f3-ns mb5'>{colorTwo}</code>
-            <h3 className="f1 f-headline-l mv0">Aa</h3>
+            <h3 className='f1 f-headline-l mv0'>Aa</h3>
             <p className='lh-copy measure'>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
               tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
