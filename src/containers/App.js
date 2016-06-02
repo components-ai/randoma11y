@@ -42,6 +42,7 @@ const App = React.createClass({
     return (
       <div className='sans-serif relative'>
         <Header />
+        <div className="tc"><p className="f2"><strong>AA Large</strong> / <strong>3.7</strong></p></div>
         <Combination colorOne={colorOne} colorTwo={colorTwo} />
         <div className='pa4 cf bg-white'>
           <div className='w-100 tc'>
