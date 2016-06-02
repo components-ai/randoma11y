@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Combination from '../components/Combination'
 
+import contrast from 'get-contrast'
 import random from 'random-a11y-combo'
 
 import { setCurrentCombo, upvote, downvote } from '../store/reducers/votes'
@@ -42,7 +43,11 @@ const App = React.createClass({
     return (
       <div className='sans-serif relative'>
         <Header />
-        <div className="tc"><p className="f2"><strong>AA Large</strong> / <strong>3.7</strong></p></div>
+        <div className="tc">
+          <p className="f2">
+            <strong>{contrast.score(colorOne, colorTwo)}</strong> / <strong>{contrast.ratio(colorOne, colorTwo).toFixed(2)}</strong>
+          </p>
+        </div>
         <Combination colorOne={colorOne} colorTwo={colorTwo} />
         <div className='pa4 cf bg-white'>
           <div className='w-100 tc'>
