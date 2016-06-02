@@ -6,39 +6,42 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Combination from '../components/Combination'
 
+import isBlank from 'is-blank'
 import contrast from 'get-contrast'
 import random from 'random-a11y-combo'
 
 import { setCurrentCombo, upvote, downvote } from '../store/reducers/votes'
 
 const App = React.createClass({
-  getInitialState () {
-    return { colors: random() }
-  },
-
   componentDidMount () {
-    this.props.setCurrentCombo(this.state.colors)
+    this.props.setCurrentCombo(random())
   },
 
   handleNewColorsClick () {
-    const colors = random()
-    this.setState({ colors })
-    this.props.setCurrentCombo(colors)
+    this.props.setCurrentCombo(random())
   },
 
   handleUpvoteClick () {
-    this.props.upvote(this.state.colors)
+    this.props.upvote(this.props.currentCombo)
   },
 
   handleDownvoteClick () {
-    this.props.downvote(this.state.colors)
+    this.props.downvote(this.props.currentCombo)
   },
 
   render () {
-    const { colors } = this.state
+    const { currentCombo } = this.props
 
-    const colorOne = colors && colors[0]
-    const colorTwo = colors && colors[1]
+    const colorOne = currentCombo && currentCombo[0]
+    const colorTwo = currentCombo && currentCombo[1]
+
+    if (isBlank(currentCombo)) {
+      return (
+        <div className='tc'>
+          <h1>Loading</h1>
+        </div>
+      )
+    }
 
     return (
       <div className='sans-serif relative'>
@@ -84,14 +87,14 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  combo: state.votes.get('currentCombo').toJS()
+  currentCombo: state.votes.get('currentCombo').toJS()
 })
 
 const mapDispatchToProps = dispatch => ({
   navigate: route => dispatch(routeActions.push(route)),
-  upvote: combo => dispatch(upvote(combo)),
-  downvote: combo => dispatch(downvote(combo)),
-  setCurrentCombo: combo => dispatch(setCurrentCombo(combo))
+  upvote: currentCombo => dispatch(upvote(currentCombo)),
+  downvote: currentCombo => dispatch(downvote(currentCombo)),
+  setCurrentCombo: currentCombo => dispatch(setCurrentCombo(currentCombo))
 })
 
 export default connect(
