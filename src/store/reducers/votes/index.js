@@ -13,7 +13,7 @@ const initialState = fromJS({
 })
 
 const votesReducer = (state = initialState, action = {}) => {
-  switch(action.type) {
+  switch (action.type) {
     case SEND_UPVOTE:
       return state.merge({
         currentVote: 'up',
@@ -52,11 +52,9 @@ export const sendDownvote = combo => ({
 })
 
 export const setCurrentCombo = combo => ({
- type: SET_CURRENT_COMBO,
- combo
+  type: SET_CURRENT_COMBO,
+  combo
 })
-
-const shouldVote = () => true
 
 export const upvote = (combo) => {
   console.log(combo)

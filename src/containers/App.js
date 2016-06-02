@@ -14,6 +14,16 @@ import random from 'random-a11y-combo'
 import { setCurrentCombo, upvote, downvote } from '../store/reducers/votes'
 
 const App = React.createClass({
+  propTypes: {
+    location: PropTypes.object.isRequired,
+    navigate: PropTypes.func.isRequired,
+    setCurrentCombo: PropTypes.func.isRequired,
+    upvote: PropTypes.func.isRequired,
+    downvote: PropTypes.func.isRequired,
+    currentCombo: PropTypes.array,
+    currentVote: PropTypes.string
+  },
+
   componentDidMount () {
     this.props.setCurrentCombo(random())
   },
@@ -53,8 +63,8 @@ const App = React.createClass({
       <div className='sans-serif relative'>
         {notificationDiv}
         <Header />
-        <div className="tc">
-          <p className="f2">
+        <div className='tc'>
+          <p className='f2'>
             <strong>{contrast.score(colorOne, colorTwo)}</strong> / <strong>{contrast.ratio(colorOne, colorTwo).toFixed(2)}</strong>
           </p>
         </div>
@@ -87,11 +97,6 @@ const App = React.createClass({
     )
   }
 })
-
-App.propTypes = {
-  location: PropTypes.object.isRequired,
-  navigate: PropTypes.func.isRequired
-}
 
 const mapStateToProps = (state) => ({
   currentCombo: state.votes.get('currentCombo').toJS(),
