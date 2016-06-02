@@ -3,10 +3,12 @@ import fetch from 'isomorphic-fetch'
 
 const SEND_UPVOTE = 'SEND_UPVOTE'
 const SEND_DOWNVOTE = 'SEND_DOWNVOTE'
+const SET_CURRENT_COMBO = 'SET_CURRENT_COMBO'
 
 const initialState = fromJS({
   upvotes: [],
-  downvotes: []
+  downvotes: [],
+  currentCombo: []
 })
 
 const votesReducer = (state = initialState, action = {}) => {
@@ -19,6 +21,11 @@ const votesReducer = (state = initialState, action = {}) => {
     case SEND_DOWNVOTE:
       return state.merge({
         downvotes: state.get('downvotes').push(action.combo)
+      })
+
+    case SET_CURRENT_COMBO:
+      return state.merge({
+        currentCombo: action.combo
       })
 
     default:
@@ -40,36 +47,51 @@ export const sendDownvote = combo => ({
   combo
 })
 
+export const setCurrentCombo = combo => ({
+ type: SET_CURRENT_COMBO,
+ combo
+})
+
 const shouldVote = () => true
 
-const upvote = (combo) => {
+export const upvote = (combo) => {
+  console.log(combo)
   return dispatch => {
     dispatch(sendUpvote(combo))
 
-    return fetch('http://randoma11y.com/votes', {
+    console.log(combo)
+    return fetch('http://www.randoma11y.com/votes', {
       method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
-        vote: true,
-        combo
+        vote: { value: true },
+        combo: combo
       })
-      .then(req => req.json())
-      .then(json => console.log(json))
     })
+    .then(req => req.json())
+    .then(json => console.log(json))
   }
 }
 
-const downvote = (combo) => {
+export const downvote = (combo) => {
   return dispatch => {
     dispatch(sendDownvote(combo))
 
-    return fetch('http://randoma11y.com/votes', {
+    return fetch('http://www.randoma11y.com/votes', {
       method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
-        vote: false,
-        combo
+        vote: { value: false },
+        combo: combo
       })
-      .then(req => req.json())
-      .then(json => console.log(json))
     })
+    .then(req => req.json())
+    .then(json => console.log(json))
   }
 }
