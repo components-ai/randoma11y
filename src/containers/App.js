@@ -4,6 +4,7 @@ import { routeActions } from 'react-router-redux'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Notification from '../components/Notification'
 import Combination from '../components/Combination'
 
 import isBlank from 'is-blank'
@@ -30,11 +31,12 @@ const App = React.createClass({
   },
 
   render () {
-    const { currentCombo } = this.props
+    const { currentCombo, currentVote } = this.props
 
     const colorOne = currentCombo && currentCombo[0]
     const colorTwo = currentCombo && currentCombo[1]
 
+    // Loading state
     if (isBlank(currentCombo)) {
       return (
         <div className='tc'>
@@ -43,8 +45,11 @@ const App = React.createClass({
       )
     }
 
+    const notificationDiv = currentVote && <Notification children='Success!' />
+
     return (
       <div className='sans-serif relative'>
+        {notificationDiv}
         <Header />
         <div className="tc">
           <p className="f2">
@@ -87,7 +92,8 @@ App.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  currentCombo: state.votes.get('currentCombo').toJS()
+  currentCombo: state.votes.get('currentCombo').toJS(),
+  currentVote: state.votes.get('currentVote')
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -8,24 +8,28 @@ const SET_CURRENT_COMBO = 'SET_CURRENT_COMBO'
 const initialState = fromJS({
   upvotes: [],
   downvotes: [],
-  currentCombo: []
+  currentCombo: [],
+  currentVote: null
 })
 
 const votesReducer = (state = initialState, action = {}) => {
   switch(action.type) {
     case SEND_UPVOTE:
       return state.merge({
+        currentVote: 'up',
         upvotes: state.get('upvotes').push(action.combo)
       })
 
     case SEND_DOWNVOTE:
       return state.merge({
+        currentVote: 'down',
         downvotes: state.get('downvotes').push(action.combo)
       })
 
     case SET_CURRENT_COMBO:
       return state.merge({
-        currentCombo: action.combo
+        currentCombo: action.combo,
+        currentVote: null
       })
 
     default:
