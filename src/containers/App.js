@@ -24,10 +24,12 @@ const App = React.createClass({
 
   handleUpvoteClick () {
     this.props.upvote(this.props.currentCombo)
+    this.handleNewColorsClick()
   },
 
   handleDownvoteClick () {
     this.props.downvote(this.props.currentCombo)
+    this.handleNewColorsClick()
   },
 
   render () {
