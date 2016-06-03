@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import Notification from '../components/Notification'
 import Combination from '../components/Combination'
 
+import isPresent from 'is-present'
 import isBlank from 'is-blank'
 import contrast from 'get-contrast'
 import random from 'random-a11y-combo'
@@ -24,12 +25,24 @@ const App = React.createClass({
     currentVote: PropTypes.string
   },
 
+  contextTypes: {
+    router: PropTypes.object
+  },
+
+  cycleCurrentCombo () {
+    let { location: { query: { hex } } } = this.props
+
+    if (isPresent(hex)) { hex = `#${hex}` }
+
+    this.props.setCurrentCombo(random(hex))
+  },
+
   componentDidMount () {
-    this.props.setCurrentCombo(random())
+    this.cycleCurrentCombo()
   },
 
   handleNewColorsClick () {
-    this.props.setCurrentCombo(random())
+    this.cycleCurrentCombo()
   },
 
   handleUpvoteClick () {
