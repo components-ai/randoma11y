@@ -16,6 +16,7 @@ import { setCurrentCombo, upvote, downvote } from '../store/reducers/votes'
 
 const App = React.createClass({
   propTypes: {
+    children: PropTypes.object,
     location: PropTypes.object.isRequired,
     navigate: PropTypes.func.isRequired,
     setCurrentCombo: PropTypes.func.isRequired,
@@ -56,7 +57,7 @@ const App = React.createClass({
   },
 
   render () {
-    const { currentCombo, currentVote } = this.props
+    const { children, currentCombo, currentVote } = this.props
 
     const colorOne = currentCombo && currentCombo[0]
     const colorTwo = currentCombo && currentCombo[1]
@@ -71,6 +72,10 @@ const App = React.createClass({
     }
 
     const notificationDiv = currentVote && <Notification children='Success!' />
+
+    if (isPresent(children)) {
+      return <div>{children}</div>
+    }
 
     return (
       <div className='sans-serif relative'>
