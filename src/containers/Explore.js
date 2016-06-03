@@ -43,7 +43,7 @@ const App = React.createClass({
         <div className='cf'>
           {combos.map((combo, i) => {
             return (
-              <div className='fl w-100 w-25-ns' key={i}>
+              <div className='fl w-100 w-50-m w-25-l' key={i}>
                 <div className='cf pa3'>
                   <div className='fl w-100 w-50-ns' style={{backgroundColor: combo[0], color: combo[1]}}>
                     <div className='pa4 tc'>
