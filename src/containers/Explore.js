@@ -6,8 +6,6 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import isPresent from 'is-present'
-import isBlank from 'is-blank'
-import contrast from 'get-contrast'
 import random from 'random-a11y-combo'
 
 const App = React.createClass({
@@ -39,13 +37,13 @@ const App = React.createClass({
         <Header />
         <div className='tc'>
           <p className='f2 b'>
-            Explore 
+            Explore
           </p>
         </div>
         <div className='cf'>
           {combos.map((combo, i) => {
             return (
-              <div className='fl w-25' key={i}>
+              <div className='fl w-100 w-25-ns' key={i}>
                 <div className='cf pa3'>
                   <div className='fl w-100 w-50-ns' style={{backgroundColor: combo[0], color: combo[1]}}>
                     <div className='pa4 tc'>
