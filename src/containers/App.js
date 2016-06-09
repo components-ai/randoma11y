@@ -87,23 +87,29 @@ const App = React.createClass({
           </p>
         </div>
         <Combination colorOne={colorOne} colorTwo={colorTwo} />
-        <div className='pa4 cf bg-white'>
-          <div className='w-100 tc'>
-            <button
-              className='db w-100 w-auto-ns mt2 mt0-ns dib-ns bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 bg-white fw6 ttu f6 tracked mr3 cursor'
-              onClick={this.handleUpvoteClick}>
-                Vote Up
-            </button>
-            <button
-              className='db w-100 w-auto-ns mt2 mt0-ns dib-ns bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 bg-white fw6 ttu f6 tracked mr3 cursor'
-              onClick={this.handleDownvoteClick}>
-                Vote Down
-            </button>
-            <button
-              className='db w-100 w-auto-ns mt2 mt0-ns dib-ns bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns br2 bg-white fw6 ttu f6 tracked cursor' onClick={this.handleNewColorsClick}>
-              Next
-            </button>
-            <div className='tc'>
+        <div className='ph4 pb4 pt4-ns cf bg-white'>
+          <div className='tc cf mw7-ns center mt2 pt1 ph0 ph4-ns'>
+            <div className='fl w-50 w-33-ns pr1 pr2-ns'>
+              <button
+                className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked mr3 cursor'
+                onClick={this.handleUpvoteClick}>
+                  Vote Up
+              </button>
+            </div>
+            <div className='fl w-50 w-33-ns pl1 ph1-ns'>
+              <button
+                className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked mr3 cursor'
+                onClick={this.handleDownvoteClick}>
+                  Vote Down
+              </button>
+            </div>
+            <div className='fl w-100 w-33-ns pl2-ns mt1 mt0-ns'>
+              <button
+                className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked cursor' onClick={this.handleNewColorsClick}>
+                Next
+              </button>
+            </div>
+            <div className='tc fl w-100'>
               <p className='measure fw1 center'>
                 The more you vote, the faster the robots learn.
               </p>
