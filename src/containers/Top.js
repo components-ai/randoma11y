@@ -6,9 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Combination from '../components/Combination'
 
-import isPresent from 'is-present'
 import isBlank from 'is-blank'
-import contrast from 'get-contrast'
 
 import { fetchCombos } from '../store/reducers/combos'
 
@@ -16,14 +14,11 @@ const Top = React.createClass({
   propTypes: {
     location: PropTypes.object.isRequired,
     navigate: PropTypes.func.isRequired,
+    combos: PropTypes.array
   },
 
   contextTypes: {
     router: PropTypes.object
-  },
-
-  componentDidMount () {
-    this.props.fetchCombos()
   },
 
   render () {
@@ -41,20 +36,26 @@ const Top = React.createClass({
     return (
       <div className='sans-serif relative'>
         <Header />
-        <div className='tc'>
-          <p className='f2'>
-            <strong>{contrast.score(colorOne, colorTwo)}</strong> / <strong>{contrast.ratio(colorOne, colorTwo).toFixed(2)}</strong>
-          </p>
-        </div>
-        {combos.map(combo => <Combination colorOne={combo.color_one} colorTwo={combo.color_two} />)}
+        {combos.map(combo => (
+          <div>
+            <Combination
+              colorOne={combo.color_one}
+              colorTwo={combo.color_two}
+            />
+            <div className='tc'>
+              {combo.up_votes.length} up <br />
+              {combo.down_votes.length} down
+            </div>
+          </div>
+          ))}
         <Footer />
       </div>
     )
   }
 })
 
-const mapStateToProps = (state) => ({
-  combos: state.top.toJS()
+const mapStateToProps = state => ({
+  combos: state.combos.get('top').toJS()
 })
 
 const mapDispatchToProps = dispatch => ({
