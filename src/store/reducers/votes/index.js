@@ -1,5 +1,6 @@
 import { fromJS } from 'immutable'
 import fetch from 'isomorphic-fetch'
+import { recordVote } from '../../../utils/storage'
 
 const SEND_UPVOTE = 'SEND_UPVOTE'
 const SEND_DOWNVOTE = 'SEND_DOWNVOTE'
@@ -74,7 +75,10 @@ export const upvote = (combo) => {
       })
     })
     .then(req => req.json())
-    .then(json => console.log(json))
+    .then(json => {
+      console.log(json)
+      recordVote(json)
+    })
   }
 }
 
@@ -94,6 +98,9 @@ export const downvote = (combo) => {
       })
     })
     .then(req => req.json())
-    .then(json => console.log(json))
+    .then(json => {
+      console.log(json)
+      recordVote(json)
+    })
   }
 }
