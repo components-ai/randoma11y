@@ -8,7 +8,7 @@ const Footer = () => {
       <p className='mt0 measure f4 lh-copy'>
          An ongoing project to try and curate beautiful color palettes that are a11y friendly.
         This app generates a random palette and allows you to vote the combination up or down.
-        We'll store the info and <a href="/stats/" className="dim black">keep our api open.</a>
+        We'll store the info and <a href='/stats/' className='dim black'>keep our api open.</a>
       </p>
       <h4 className='f5 fw6'>What is a11y?</h4>
       <p className='mt3 mb5 measure lh-copy'>
