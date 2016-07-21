@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Notification from '../components/Notification'
 import Combination from '../components/Combination'
+import Css from '../components/Css'
 
 import isPresent from 'is-present'
 import isBlank from 'is-blank'
@@ -158,6 +159,7 @@ const App = React.createClass({
               </p>
             </div>
           </div>
+          <Css colorOne={colorOne} colorTwo={colorTwo} />
         </div>
         <Footer />
       </div>
