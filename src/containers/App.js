@@ -14,6 +14,9 @@ import random from 'random-a11y-combo'
 
 import { setCurrentCombo, upvote, downvote } from '../store/reducers/votes'
 
+const UP_KEYCODE = 38
+const DOWN_KEYCODE = 40
+
 const App = React.createClass({
   propTypes: {
     children: PropTypes.object,
@@ -40,6 +43,11 @@ const App = React.createClass({
 
   componentDidMount () {
     this.cycleCurrentCombo()
+    this.listenToKeydownVote()
+  },
+
+  componentWillUnmount () {
+    this.stopListenToKeydownVote()
   },
 
   handleNewColorsClick () {
@@ -54,6 +62,41 @@ const App = React.createClass({
   handleDownvoteClick () {
     this.props.downvote(this.props.currentCombo)
     this.handleNewColorsClick()
+  },
+
+  listenToKeydownVote () {
+    window.addEventListener('keydown', this.handleVoteKeydown)
+  },
+
+  stopListenToKeydownVote () {
+    window.removeEventListener('keydown', this.handleVoteKeydown)
+  },
+
+  handleVoteKeydown (e) {
+    // Prevent scroll
+    if (e.keyCode === UP_KEYCODE || e.keyCode === DOWN_KEYCODE) {
+      e.preventDefault()
+    }
+
+    if (e.keyCode === UP_KEYCODE) {
+      this.handleUpvoteKeydown()
+    } else if (e.keyCode === DOWN_KEYCODE) {
+      this.handleDownvoteKeydown()
+    }
+  },
+
+  handleUpvoteKeydown () {
+    this.props.upvote(this.props.currentCombo)
+    this.handleNewColorsKeydown()
+  },
+
+  handleDownvoteKeydown () {
+    this.props.downvote(this.props.currentCombo)
+    this.handleNewColorsKeydown()
+  },
+
+  handleNewColorsKeydown () {
+    this.cycleCurrentCombo()
   },
 
   render () {
