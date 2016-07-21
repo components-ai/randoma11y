@@ -39,11 +39,36 @@ const App = React.createClass({
   },
 
   componentDidMount () {
+    document.addEventListener('keydown', this.handleKeyPress)
     this.cycleCurrentCombo()
+  },
+
+  componentWillUnnount () {
+     document.removeEventListener('keydown')
   },
 
   handleNewColorsClick () {
     this.cycleCurrentCombo()
+  },
+
+  handleKeyPress (event) {
+    const upArrow = 38
+    const downArrow = 40
+    const key = event.keyCode
+
+    if (key === upArrow || key === downArrow) {
+      event.preventDefault()
+    }
+
+    if (key === upArrow) {
+      this.props.upvote(this.props.currentCombo)
+      this.cycleCurrentCombo()
+    }
+
+    if (key === downArrow) {
+      this.props.downvote(this.props.currentCombo)
+      this.cycleCurrentCombo()
+    }
   },
 
   handleUpvoteClick () {
