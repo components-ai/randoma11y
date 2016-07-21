@@ -7,8 +7,8 @@ Iterate over, and vote on, a11y color combinations.
 ## Installation
 
 ```sh
-git clone https://github.com/johnotander/a11y-combos.git
-cd a11y-combos
+git clone https://github.com/johnotander/random-a11y.git
+cd random-a11y
 npm i
 ```
 
@@ -32,7 +32,7 @@ npm t
 - [Colorable](http://jxnblk.com/colorable)
 - [Colors](http://clrs.cc)
 - [`random-a11y-combo`](https://github.com/johnotander/random-a11y-combo)
-- [`get-contrast`](https://github.com/johnotander/get-contrast) 
+- [`get-contrast`](https://github.com/johnotander/get-contrast)
 
 ## Notes
 
