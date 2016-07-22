@@ -35,11 +35,6 @@ test('SEND_DOWNVOTE sets currentVote to "down"', t => {
   t.deepEqual(state.get('currentVote'), 'down')
 })
 
-test('SET_CURRENT_COMBO sets currentVote to null', t => {
-  state = fireAction(SET_CURRENT_COMBO, state, combo)
-  t.true(isBlank(state.get('currentVote')))
-})
-
 const fireAction = (type, currentState, combo) => (
   votesReducer(currentState, { type, combo })
 )

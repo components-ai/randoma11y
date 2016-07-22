@@ -29,8 +29,7 @@ const votesReducer = (state = initialState, action = {}) => {
 
     case SET_CURRENT_COMBO:
       return state.merge({
-        currentCombo: action.combo,
-        currentVote: null
+        currentCombo: action.combo
       })
 
     default:
