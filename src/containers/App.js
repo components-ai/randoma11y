@@ -4,7 +4,6 @@ import { routeActions } from 'react-router-redux'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import Notification from '../components/Notification'
 import Combination from '../components/Combination'
 import Css from '../components/Css'
 
@@ -102,7 +101,7 @@ const App = React.createClass({
   },
 
   render () {
-    const { children, currentCombo, currentVote } = this.props
+    const { children, currentCombo } = this.props
 
     const colorOne = currentCombo && currentCombo[0]
     const colorTwo = currentCombo && currentCombo[1]
@@ -116,15 +115,12 @@ const App = React.createClass({
       )
     }
 
-    const notificationDiv = currentVote && <Notification children='Success!' />
-
     if (isPresent(children)) {
       return <div>{children}</div>
     }
 
     return (
       <div className='sans-serif relative'>
-        {notificationDiv}
         <Header />
         <div className='tc'>
           <p className='f2'>
