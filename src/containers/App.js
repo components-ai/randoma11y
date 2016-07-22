@@ -12,6 +12,7 @@ import isPresent from 'is-present'
 import isBlank from 'is-blank'
 import contrast from 'get-contrast'
 import random from 'random-a11y-combo'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import { setCurrentCombo, upvote, downvote } from '../store/reducers/votes'
 
@@ -130,13 +131,18 @@ const App = React.createClass({
             <strong>{contrast.score(colorOne, colorTwo)}</strong> / <strong>{contrast.ratio(colorOne, colorTwo).toFixed(2)}</strong>
           </p>
         </div>
-        <Combination colorOne={colorOne} colorTwo={colorTwo} />
+        <ReactCSSTransitionGroup
+          transitionName="color-switch"
+          transitionEnterTimeout={1300}
+          transitionLeaveTimeout={500} >
+          <Combination colorOne={colorOne} colorTwo={colorTwo} key={colorOne} />
+        </ReactCSSTransitionGroup>
         <div className='ph4 pb4 pt4-ns cf bg-white'>
           <div className='tc cf mw7-ns center mt2 pt1 ph0 ph4-ns'>
             <div className='fl w-50 w-33-ns pr1 pr2-ns'>
               <button
                 className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked mr3 cursor'
-                onClick={this.handleUpvoteClick}>
+                onClick={this.handleUpvoteClick} >
                   Vote Up
               </button>
             </div>
