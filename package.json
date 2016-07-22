@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.9.0",
+    "clipboard": "^1.5.12",
     "color": "^0.11.3",
     "color-namer": "^1.1.0",
     "css-loader": "^0.23.1",
