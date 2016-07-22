@@ -14,3 +14,22 @@ body {
 }
 
 .tracked-normal { letter-spacing: .1em; }
+
+.color-switch-enter {
+  opacity: 0;
+}
+
+.color-switch-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s 0.8s ease-in-out;
+}
+
+.color-switch-leave {
+  transform: translateY(-100%);
+  z-index: 100;
+}
+
+.color-switch-leave-active {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}

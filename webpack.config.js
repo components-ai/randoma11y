@@ -29,11 +29,12 @@ module.exports = {
   module: {
     preLoaders: [{
       test: /\.js$/,
-      loader: 'source-map-loader'
+      loader: 'source-map-loader',
+      exclude: /node_modules/
     }],
     loaders: [{
       test: /\.js$/,
-      loader: 'react-hot!babel!eslint-loader',
+      loader: 'react-hot!babel',
       exclude: /node_modules/
     }, {
       test: /\.json$/,

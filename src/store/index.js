@@ -31,7 +31,7 @@ export default function configureStore (initialState) {
 
   const store = createStoreWithMiddleware(rootReducer, initialState)
 
-  if (module.hot) {
+  if (module.hot && process.env.NODE_ENV !== 'production') {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
       const nextRootReducer = require('./reducers')
