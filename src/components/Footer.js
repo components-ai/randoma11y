@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 
 const Footer = () => {
-  const tweetText = 'Find a11y friendly color combinations and vote for your favourite'
+  const tweetText = 'Find a11y friendly color combinations and vote for your favourite at'
   const tweetUrl = `https://twitter.com/share?text=${tweetText}`
 
   return (
