@@ -74,7 +74,7 @@ const App = React.createClass({
                 </div>
               )
             })}
-            </div>
+          </div>
         </div>
         <Footer />
       </div>
