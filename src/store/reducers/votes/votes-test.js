@@ -1,12 +1,11 @@
 import test from 'ava'
 import { Map } from 'immutable'
-import isBlank from 'is-blank'
 
 import votesReducer from './'
 
 const SEND_UPVOTE = 'SEND_UPVOTE'
 const SEND_DOWNVOTE = 'SEND_DOWNVOTE'
-const SET_CURRENT_COMBO = 'SET_CURRENT_COMBO'
+// const SET_CURRENT_COMBO = 'SET_CURRENT_COMBO'
 
 const combo = ['#fff', '#444']
 let state = votesReducer(undefined, {})
