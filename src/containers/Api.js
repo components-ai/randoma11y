@@ -16,6 +16,7 @@ const Api = React.createClass({
   },
 
   render () {
+    /* eslint-disable react/jsx-indent */
     return (
       <div className='sans-serif relative'>
         <Header />
@@ -116,6 +117,7 @@ Combo Load (2.0ms)  SELECT  "combos".* FROM "combos" ORDER BY "combos"."id" ASC 
         <Footer />
       </div>
     )
+    /* eslint-enable react/jsx-indent */
   }
 })
 
