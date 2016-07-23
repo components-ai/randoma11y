@@ -21,8 +21,7 @@ const Footer = () => (
       &lt;/&gt; <a href='https://github.com/johnotander/random-a11y' className='link gray dim fw6'>Front End</a> and <a href='https://github.com/johnotander/random-a11y-api' className='link gray dim fw6'>API</a>
     </p>
     <p className='mt3 gray'>
-      Useful:
-      <Link className='ml3 link dim black fw6' to='/api'>API</Link>
+      Useful: <Link className='link dim black fw6' to='/api'>API</Link>
       <Link className='ml3 link dim black fw6' to='/history'>Vote History</Link>
       <Link className='ml3 link dim black fw6' to='/explore'>Explore</Link>
       <a href='https://github.com/johnotander/random-a11y/graphs/contributors' className='ml3 link dim black fw6'>Contributors</a>
@@ -31,12 +30,9 @@ const Footer = () => (
       Related projects: <a href='//jxnblk.com/colorable' title='a11y contrast checker' className='link dim black fw6'>Colorable</a> <a href='//clrs.cc' title='A nicer color palette for the web.' className='dib ml2 link dim black fw6'>Colors</a> <a href='https://github.com/johnotander/random-a11y-combo' title='random a11y combo generator' className='dib ml2 link dim black fw6'>random-a11y-combo</a> <a href='https://github.com/johnotander/get-contrast' title='get contrast ratios and scores' className='dib ml2 link dim black fw6'>get-contrast</a>
     </p>
     <p className='f5 lh-copy measure mt5'>
-      Want to support randoma11y? Use this
-      <a className='blue link dim' href='https://geo.itunes.apple.com/us/movie/primer/id536457427?at=1l3vqFJ&ct=1l3vqFJ&mt=6'
-        title='Affiliate Link to help support random-a11y.'>
+      Want to support randoma11y? Use this <a className='blue link dim' href='https://geo.itunes.apple.com/us/movie/primer/id536457427?at=1l3vqFJ&ct=1l3vqFJ&mt=6' title='Affiliate Link to help support random-a11y.'>
         affiliate link
-      </a>
-      if you are going to buy anything on iTunes or the App Store. It doesn't cost you anything and we get a small cut from the purchase which helps us offset our costs. Thank You.
+      </a> if you are going to buy anything on iTunes or the App Store. It doesn't cost you anything and we get a small cut from the purchase which helps us offset our costs. Thank You.
     </p>
   </footer>
 )
