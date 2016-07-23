@@ -27,6 +27,8 @@ There is a small test suite you can run with the following
 npm t
 ```
 
+Note that this repo follows [JavaScript Standard Style](http://standardjs.com).
+
 ## Related
 
 - [Colorable](http://jxnblk.com/colorable)
