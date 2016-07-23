@@ -128,7 +128,7 @@ const App = React.createClass({
           </p>
         </div>
         <ReactCSSTransitionGroup
-          transitionName="color-switch"
+          transitionName='color-switch'
           transitionEnterTimeout={600}
           transitionLeaveTimeout={200} >
           <Combination colorOne={colorOne} colorTwo={colorTwo} key={colorOne} />
