@@ -89,7 +89,7 @@ Combo Load (2.0ms)  SELECT  "combos".* FROM "combos" ORDER BY "combos"."id" ASC 
         </p>
         <div className='lh-copy pa4 bg-near-white' style={{wordBreak: 'break-all'}}>
           <p className='code'>
-          $ curl 'http://randoma11y.com/combos?page=3&per_page=50'<br /><br />
+          $ curl <a href='http://randoma11y.com/combos?page=3&per_page=50' className='link'>randoma11y.com/combos?page=3&per_page=50</a> <br /><br />
           =&gt; [...]
           </p>
         </div>
