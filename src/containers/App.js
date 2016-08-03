@@ -42,8 +42,26 @@ const App = React.createClass({
     this.props.setCurrentCombo(random(hex))
   },
 
+  initializeCompare () {
+    let { location: { query: { hex, compare } } } = this.props
+
+    hex = `#${hex}`
+    compare = `#${compare}`
+
+    if (isPresent(hex) && isPresent(compare)) {
+      this.props.setCurrentCombo([hex, compare])
+    }
+  },
+
   componentDidMount () {
-    this.cycleCurrentCombo()
+    let { location: { query: { hex, compare } } } = this.props
+
+    if (isPresent(hex) && isPresent(compare)) {
+      this.initializeCompare()
+    } else {
+      this.cycleCurrentCombo()
+    }
+
     this.listenToKeydownVote()
   },
 
