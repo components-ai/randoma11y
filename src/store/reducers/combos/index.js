@@ -44,7 +44,7 @@ export const fetchCombos = () => {
   return dispatch => {
     dispatch(requestCombos())
 
-    return fetch('http://randoma11y.com/combos/top')
+    return fetch('https://randoma11y.com/combos/top')
       .then(req => req.json())
       .then(json => dispatch(receiveCombos(json)))
   }

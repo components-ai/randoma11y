@@ -62,7 +62,7 @@ export const upvote = (combo) => {
     dispatch(sendUpvote(combo))
 
     console.log(combo)
-    return fetch('http://www.randoma11y.com/votes', {
+    return fetch('https://www.randoma11y.com/votes', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -85,7 +85,7 @@ export const downvote = (combo) => {
   return dispatch => {
     dispatch(sendDownvote(combo))
 
-    return fetch('http://www.randoma11y.com/votes', {
+    return fetch('https://www.randoma11y.com/votes', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
