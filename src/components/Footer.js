@@ -34,7 +34,7 @@ const Footer = () => (
       We'll store the info and <a href='/stats/' className='dim black' style={{ color: 'inherit' }}>keep our api open.</a>
     </p>
     <p className='mb3 mt5 ttu tracked-normal tc b' style={{ fontSize: 12 }}>
-      A <a href='https://compositor.io' style={{ color: 'inherit', fontSize: 12 }} className='link dim b'>Compositor</a> project 
+      <Link href='https://compositor.io' style={{ color: 'inherit', fontSize: 12 }} className='link dim b'>A Compositor project</Link> 
     </p>
   </div>
   </footer>

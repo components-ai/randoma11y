@@ -48,7 +48,7 @@ const App = React.createClass({
         <div className='flex flex-wrap mw8 center'>
           {combos.map((combo, i) => {
             return (
-              <div className='w-100 mb5' key={i}>
+              <div className='w-100' key={i}>
                 <div className='flex flex-wrap'>
                   <div className='w-100 w-50-ns' 
                     style={{ 
