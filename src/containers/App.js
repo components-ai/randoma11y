@@ -138,48 +138,40 @@ const App = React.createClass({
     }
 
     return (
-      <div className='sans-serif relative'>
-        <Header />
-        <div className='tc'>
-          <p className='f2'>
-            <strong>{contrast.score(colorOne, colorTwo)}</strong> / <strong>{contrast.ratio(colorOne, colorTwo).toFixed(2)}</strong>
-          </p>
-        </div>
+      <div className='sans-serif relative' style={{ background: colorTwo, color: colorOne }} >
         <ReactCSSTransitionGroup
           transitionName='color-switch'
           transitionEnterTimeout={600}
           transitionLeaveTimeout={200} >
+          <Header colorOne={colorOne} colorTwo={colorTwo} />
+          <div className='tc pt6' style={{ background: colorTwo, color: colorOne }}>
+            <p className='f5 code pb5 mt0'>
+              {contrast.ratio(colorOne, colorTwo).toFixed(2)} contrast {contrast.score(colorOne, colorTwo)}
+            </p>
+          </div>
           <Combination colorOne={colorOne} colorTwo={colorTwo} key={colorOne} />
         </ReactCSSTransitionGroup>
-        <div className='ph4 pb4 pt4-ns cf bg-white'>
-          <div className='tc cf mw7-ns center mt2 pt1 ph0 ph4-ns'>
-            <div className='fl w-50 w-33-ns pr1 pr2-ns'>
+        <div className='ph4 pb4 pt4-ns cf'>
+          <div className='tc cf mw6 center ph0 ph4-ns mb6'>
               <button
-                className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked mr3 cursor'
+                className='dib bg-hover-near-white input-reset ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 mr3 cursor'
+                style={{ color: colorTwo, backgroundColor: colorOne, borderColor: colorOne }}
                 onClick={this.handleUpvoteClick} >
                   Vote Up
               </button>
-            </div>
-            <div className='fl w-50 w-33-ns pl1 ph1-ns'>
               <button
-                className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked mr3 cursor'
+                className='dib bg-hover-near-white input-reset bg-transparent ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 cursor'
+                style={{ color: colorOne, borderColor: colorOne }}
                 onClick={this.handleDownvoteClick}>
                   Vote Down
               </button>
-            </div>
-            <div className='fl w-100 w-33-ns pl2-ns mt1 mt0-ns'>
               <button
-                className='db w-100 bg-hover-near-white input-reset black ba b--black-20 ph3 ph4-ns pv2 pv3-ns bg-white fw6 ttu f6 tracked cursor' onClick={this.handleNewColorsClick}>
-                Next
+                className='db w-100 tc bg-hover-near-white input-reset bg-transparent bn pv4 fw6 f6 cursor' 
+                style={{ color: colorOne, borderColor: colorOne }}
+                onClick={this.handleNewColorsClick}>
+                Skip
               </button>
-            </div>
-            <div className='tc fl w-100'>
-              <p className='measure fw1 center'>
-                The more you vote, the faster the robots learn.
-              </p>
-            </div>
           </div>
-          <Css colorOne={colorOne} colorTwo={colorTwo} />
         </div>
         <Footer />
       </div>

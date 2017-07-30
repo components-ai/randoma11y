@@ -17,15 +17,17 @@ const Css = ({ colorOne, colorTwo }) => {
 `.replace(/^\s/, '')
 
   return (
-    <div className='w-100 mw6 center'>
-      <h3 className='f5 fw6 pb1 mb2 bb b--black-10'>CSS</h3>
-      <pre
-        id='css'
-        className='code bg-near-white dark-gray br1 mv0 pa2 pre f6 lh-copy'
-        style={{ WebkitOverflowScrolling: 'touch' }}
-        children={code}
-      />
-      <ClipboardButton />
+    <div className="tc">
+      <div className='dib tl' style={{ background: colorTwo, color: colorOne }}>
+        <h3 className='f5 fw6 pb1 mb2'>CSS</h3>
+        <pre
+          id='css'
+          className='code br1  mv0 pre f6 lh-copy'
+          style={{ WebkitOverflowScrolling: 'touch' }}
+          children={code}
+        />
+        <ClipboardButton />
+      </div>
     </div>
   )
 }

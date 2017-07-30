@@ -3,7 +3,7 @@ import React from 'react'
 import Clipboard from 'clipboard'
 
 const ClipboardButton = () => {
-  const cx = 'dib bg-white black-90 br2 mt2 pv2 ph3 link ba b--black-10 dark-gray lh-solid f6 fw6'
+  const cx = 'dib bg-transparent bn mt2 pv2 link ba lh-solid f6 fw6'
 
   new Clipboard('#copy') // eslint-disable-line no-new
 
@@ -12,7 +12,8 @@ const ClipboardButton = () => {
       data-clipboard-target='#css'
       id='copy'
       className={cx}
-      children='Copy'
+      style={{color: 'inherit', borderColor: '' }}
+      children='Copy CSS to clipboard'
     />
   )
 }

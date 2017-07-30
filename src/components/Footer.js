@@ -5,43 +5,37 @@ const TwitterButton = () => {
   const tweetText = 'Find a11y friendly color combinations and vote for your favourite at'
   const tweetUrl = `https://twitter.com/share?text=${tweetText}`
   return (
-    <a href={tweetUrl} className='dib ml3-ns fr-ns dim f6 ttu fw6 link mb4 twitter-share-button bg-dark-blue white br1 ph3 pv2' data-via='mrmrs_' data-size='large'>Tweet This</a>
+    <a 
+      href={tweetUrl} 
+      className='tc lh-solid dib dim ttu fw6 v-mid link mb4 twitter-share-button br1 ph3 pv2' 
+      style={{ color: 'inherit', fontSize: 12 }} 
+      data-via='mrmrs_' 
+      data-size='large'>
+      <svg className="mr2 dib w1 v-mid relative" viewBox="0 0 32 32" style={{ fill: 'currentColor', top: -2 }}>
+        <title>twitter icon</title>
+        <path d="M2 4 C6 8 10 12 15 11 A6 6 0 0 1 22 4 A6 6 0 0 1 26 6 A8 8 0 0 0 31 4 A8 8 0 0 1 28 8 A8 8 0 0 0 32 7 A8 8 0 0 1 28 11 A18 18 0 0 1 10 30 A18 18 0 0 1 0 27 A12 12 0 0 0 8 24 A8 8 0 0 1 3 20 A8 8 0 0 0 6 19.5 A8 8 0 0 1 0 12 A8 8 0 0 0 3 13 A8 8 0 0 1 2 4"></path>
+      </svg>
+      <span className="dib">Tweet This</span>
+    </a>
   )
 }
 
 const Footer = () => (
-  <footer className='ph4 pt4 pb5 bt b--black-10 cf'>
-    <TwitterButton />
-    <h3 className='fw6 f5'>What is this?</h3>
-    <p className='mt0 measure f4 lh-copy'>
+  <footer className='pt5 pb5 bt'>
+    <div className="mw8 center ph4">
+    <div className="tc">
+      <TwitterButton />
+    </div>
+    <h3 className='fw6 f5 measure center'>What is this?</h3>
+    <p className='mt0 measure f5 lh-copy center'>
         An ongoing project to try and curate beautiful color palettes that are a11y friendly.
       This app generates a random palette and allows you to vote the combination up or down.
-      We'll store the info and <a href='/stats/' className='dim black'>keep our api open.</a>
+      We'll store the info and <a href='/stats/' className='dim black' style={{ color: 'inherit' }}>keep our api open.</a>
     </p>
-    <h4 className='f5 fw6'>What is a11y?</h4>
-    <p className='mt3 mb5 measure lh-copy'>
-        Accessibility (a11y) is a measure of a computer system's accessibility is to all people, including those with disabilities or impairments. It concerns both software and hardware and how they are configured in order to enable a disabled or impaired person to use that computer system successfully. Color contrast is just one part of accessibility you should consider.
+    <p className='mb3 mt5 ttu tracked-normal tc b' style={{ fontSize: 12 }}>
+      A <a href='https://compositor.io' style={{ color: 'inherit', fontSize: 12 }} className='link dim b'>Compositor</a> project 
     </p>
-    <p className='mb3 f6 ttu tracked-normal gray'>
-      Built by <a href='http://twitter.com/4lpine' className='link gray dim fw6'>@4lpine</a> and <a href='http://twitter.com/mrmrs_' className='link gray dim fw6'>@mrmrs_</a>
-    </p>
-    <p className='mb3 f6 ttu tracked-normal gray'>
-      &lt;/&gt; <a href='https://github.com/johnotander/random-a11y' className='link gray dim fw6'>Front End</a> and <a href='https://github.com/johnotander/random-a11y-api' className='link gray dim fw6'>API</a>
-    </p>
-    <p className='mt3 gray'>
-      Useful: <Link className='link dim black fw6' to='/api'>API</Link>
-      <Link className='ml3 link dim black fw6' to='/history'>Vote History</Link>
-      <Link className='ml3 link dim black fw6' to='/explore'>Explore</Link>
-      <a href='https://github.com/johnotander/random-a11y/graphs/contributors' className='ml3 link dim black fw6'>Contributors</a>
-    </p>
-    <p className='mt3 gray'>
-      Related projects: <a href='//jxnblk.com/colorable' title='a11y contrast checker' className='link dim black fw6'>Colorable</a> <a href='//clrs.cc' title='A nicer color palette for the web.' className='dib ml2 link dim black fw6'>Colors</a> <a href='https://github.com/johnotander/random-a11y-combo' title='random a11y combo generator' className='dib ml2 link dim black fw6'>random-a11y-combo</a> <a href='https://github.com/johnotander/get-contrast' title='get contrast ratios and scores' className='dib ml2 link dim black fw6'>get-contrast</a> <a href='//twitter.com/@a11ycolors' title='random a11y twitter bot' className='dib ml2 link dim black fw6'>@a11ycolors</a>
-    </p>
-    <p className='f5 lh-copy measure mt5'>
-      Want to support randoma11y? Use this <a className='dark-blue link dim' href='https://geo.itunes.apple.com/us/movie/primer/id536457427?at=1l3vqFJ&ct=1l3vqFJ&mt=6' title='Affiliate Link to help support random-a11y.'>
-        affiliate link
-      </a> if you are going to buy anything on iTunes or the App Store. It doesn't cost you anything and we get a small cut from the purchase which helps us offset our costs. Thank You.
-    </p>
+  </div>
   </footer>
 )
 

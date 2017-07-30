@@ -1,27 +1,23 @@
 import React, { PropTypes } from 'react'
 import Color from 'color'
+import namer from 'color-namer'
+
 
 const Combination = ({ colorOne, colorTwo }) => (
-  <section className='bg-white'>
-    <div className='dib w-100 w-50-ns pv4 ph4' style={{ backgroundColor: colorOne, color: colorTwo }}>
-      <code className='f6 f4-ns mb2 db fw6'>{colorOne}</code>
-      <code className='f6 f5-ns mb2 db'>{Color(colorOne).hslString()}</code>
-      <code className='f6 f5-ns mb2 mb4-ns db'>{Color(colorOne).rgbString()}</code>
-      <h3 className='f3 f1-m f-headline-l mv0'>Aa Bb Cc</h3>
-      <p className='lh-copy measure'>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
-        <span className='dn di-ns'>Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
-      </p>
+  <section className='pb5 mb0 mw6 center' style={{ backgroundColor: colorTwo }}>
+    <div className='dib w-100 w-50-ns ph4' style={{ backgroundColor: colorTwo, color: colorOne }}>
+      <code className='f6 f5-ns mb2 dn'>{Color(colorOne).hslString()}</code>
+      <code className='f6 f5-ns mb2 mb4-ns dn'>{Color(colorOne).rgbString()}</code>
+      <h4 className='mb2'>{namer(colorOne).pantone[0].name}</h4>
+      <h3 className='f3 f1-ns mv0 fw6'>{colorOne}</h3>
     </div>
-    <div className='dib w-100 w-50-ns pv4 ph4' style={{ backgroundColor: colorTwo, color: colorOne }}>
-      <code className='f6 f4-ns fw6 mb2 db'>{colorTwo}</code>
-      <code className='f6 f5-ns mb2 db'>{Color(colorTwo).hslString()}</code>
-      <code className='f6 f5-ns mb2 mb4-ns db'>{Color(colorTwo).rgbString()}</code>
-      <h3 className='f3 f1-m f-headline-l mv0'>Aa Bb Cc</h3>
-      <p className='lh-copy measure'>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod.
-        <span className='dn di-ns'>Tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
-      </p>
+    <div className='dib w-100 w-50-ns ph4'>
+      <code className='f6 f5-ns mb2 dn'>{Color(colorTwo).hslString()}</code>
+      <code className='f6 f5-ns mb2 mb4-ns dn'>{Color(colorTwo).rgbString()}</code>
+      <div className='pa4 dib' style={{ backgroundColor: colorOne, color: colorTwo }}>
+        <h4 className='mb2'>{namer(colorTwo).pantone[0].name}</h4>
+        <h3 className='f3 f1-ns mv0 fw6'>{colorTwo}</h3>
+      </div>
     </div>
   </section>
 )

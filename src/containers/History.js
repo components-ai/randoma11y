@@ -23,20 +23,20 @@ const App = React.createClass({
     return (
       <div className='sans-serif relative'>
         <Header />
-        <div className='tc'>
-          <p className='f2 b mb0'>
+        <div className='tl pt5 ph4 mw8 center'>
+          <p className='f4 b mb0'>
             Your Vote History
           </p>
         </div>
-        <div className='cf'>
+        <div className='cf ph4 pb5 mw8 center'>
           <div className='fl w-100 w-50-m w-50-l'>
-            <p className='f3 b tc'>
+            <p className='f5 b'>
               Upvoted
             </p>
             {Object.keys(votes.up).map(function (key) {
               return (
-                <div className='fl w-100 w-50-l' key={votes.up[key].id}>
-                  <div className='cf pa3'>
+                <div className='fl w-100' key={votes.up[key].id}>
+                  <div className='cf pr0 pr2-ns'>
                     <div className='fl w-100 w-50-ns' style={{backgroundColor: votes.up[key].color_one, color: votes.up[key].color_two}}>
                       <div className='pa4 tc'>
                         <code>{votes.up[key].color_one}</code>
@@ -53,13 +53,13 @@ const App = React.createClass({
             })}
           </div>
           <div className='fl w-100 w-50-m w-50-l'>
-            <p className='f3 b tc'>
+            <p className='f5 b tl'>
               Downvoted
             </p>
             {Object.keys(votes.down).map(function (key) {
               return (
-                <div className='fl w-100 w-50-l' key={votes.down[key].id}>
-                  <div className='cf pa3'>
+                <div className='fl w-100' key={votes.down[key].id}>
+                  <div className='cf pl0 pl2-ns'>
                     <div className='fl w-100 w-50-ns' style={{backgroundColor: votes.down[key].color_one, color: votes.down[key].color_two}}>
                       <div className='pa4 tc'>
                         <code>{votes.down[key].color_one}</code>
