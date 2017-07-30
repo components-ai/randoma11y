@@ -21,7 +21,8 @@ const TwitterButton = () => {
 }
 
 const Footer = () => (
-  <footer className='pt5 pb5 bt'>
+  <footer className='pb5'>
+    <div className='bt o-40 pt5' />
     <div className="mw8 center ph4">
     <div className="tc">
       <TwitterButton />
