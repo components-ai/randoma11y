@@ -5,11 +5,11 @@ const TwitterButton = () => {
   const tweetText = 'Find a11y friendly color combinations and vote for your favourite at'
   const tweetUrl = `https://twitter.com/share?text=${tweetText}`
   return (
-    <a 
-      href={tweetUrl} 
-      className='tc lh-solid dib dim ttu fw6 v-mid link mb4 twitter-share-button br1 ph3 pv2' 
-      style={{ color: 'inherit', fontSize: 12 }} 
-      data-via='mrmrs_' 
+    <a
+      href={tweetUrl}
+      className='tc lh-solid dib dim ttu fw6 v-mid link mb4 twitter-share-button br1 ph3 pv2'
+      style={{ color: 'inherit', fontSize: 12 }}
+      data-via='mrmrs_'
       data-size='large'>
       <svg className="mr2 dib w1 v-mid relative" viewBox="0 0 32 32" style={{ fill: 'currentColor', top: -2 }}>
         <title>twitter icon</title>
@@ -31,10 +31,10 @@ const Footer = () => (
     <p className='mt0 measure f5 lh-copy center'>
         An ongoing project to try and curate beautiful color palettes that are a11y friendly.
       This app generates a random palette and allows you to vote the combination up or down.
-      We'll store the info and <a href='/stats/' className='dim black' style={{ color: 'inherit' }}>keep our api open.</a>
+      We'll store the info and <a href='/stats/' className='dim black' style={{ color: 'inherit' }}>keep our API open.</a>
     </p>
     <p className='mb3 mt5 ttu tracked-normal tc b' style={{ fontSize: 12 }}>
-      <Link href='https://compositor.io' style={{ color: 'inherit', fontSize: 12 }} className='link dim b'>A Compositor project</Link> 
+      <Link href='https://compositor.io' style={{ color: 'inherit', fontSize: 12 }} className='link dim b'>A Compositor project</Link>
     </p>
   </div>
   </footer>
