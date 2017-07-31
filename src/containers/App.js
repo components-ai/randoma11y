@@ -153,24 +153,24 @@ const App = React.createClass({
         </ReactCSSTransitionGroup>
         <div className='ph4 pb4 pt4-ns cf'>
           <div className='tc cf mw6 center ph0 ph4-ns mb6'>
-              <button
-                className='dib bg-hover-near-white input-reset ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 mr3 cursor'
-                style={{ color: colorTwo, backgroundColor: colorOne, borderColor: colorOne }}
-                onClick={this.handleUpvoteClick} >
-                  Vote Up
-              </button>
-              <button
-                className='dib bg-hover-near-white input-reset bg-transparent ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 cursor'
-                style={{ color: colorOne, borderColor: colorOne }}
-                onClick={this.handleDownvoteClick}>
-                  Vote Down
-              </button>
-              <button
-                className='db w-100 tc bg-hover-near-white input-reset bg-transparent bn pv4 fw6 f6 cursor' 
-                style={{ color: colorOne, borderColor: colorOne }}
-                onClick={this.handleNewColorsClick}>
-                Skip
-              </button>
+            <button
+              className='dib bg-hover-near-white input-reset ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 mr3 cursor'
+              style={{ color: colorTwo, backgroundColor: colorOne, borderColor: colorOne }}
+              onClick={this.handleUpvoteClick} >
+                Vote Up
+            </button>
+            <button
+              className='dib bg-hover-near-white input-reset bg-transparent ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 cursor'
+              style={{ color: colorOne, borderColor: colorOne }}
+              onClick={this.handleDownvoteClick}>
+                Vote Down
+            </button>
+            <button
+              className='db w-100 tc bg-hover-near-white input-reset bg-transparent bn pv4 fw6 f6 cursor'
+              style={{ color: colorOne, borderColor: colorOne }}
+              onClick={this.handleNewColorsClick}>
+              Skip
+            </button>
           </div>
         </div>
         <Footer />
