@@ -144,8 +144,8 @@ const App = React.createClass({
           transitionEnterTimeout={600}
           transitionLeaveTimeout={200} >
           <Header colorOne={colorOne} colorTwo={colorTwo} />
-          <div className='tc pt6' style={{ background: colorTwo, color: colorOne }}>
-            <p className='f5 code pb5 mt0'>
+          <div className='tc pt4 pt6-ns' style={{ background: colorTwo, color: colorOne }}>
+            <p className='f6 f5-ns code pb4 pb5-ns mt0'>
               {contrast.ratio(colorOne, colorTwo).toFixed(2)} contrast {contrast.score(colorOne, colorTwo)}
             </p>
           </div>
@@ -157,13 +157,13 @@ const App = React.createClass({
                 className='dib bg-hover-near-white input-reset ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 mr3 cursor'
                 style={{ color: colorTwo, backgroundColor: colorOne, borderColor: colorOne }}
                 onClick={this.handleUpvoteClick} >
-                  Vote Up
+                   Vote Up 
               </button>
               <button
                 className='dib bg-hover-near-white input-reset bg-transparent ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 cursor'
                 style={{ color: colorOne, borderColor: colorOne }}
                 onClick={this.handleDownvoteClick}>
-                  Vote Down
+                   Vote Down 
               </button>
               <button
                 className='db w-100 tc bg-hover-near-white input-reset bg-transparent bn pv4 fw6 f6 cursor' 
