@@ -144,15 +144,15 @@ const App = React.createClass({
           transitionEnterTimeout={600}
           transitionLeaveTimeout={200} >
           <Header colorOne={colorOne} colorTwo={colorTwo} />
-          <div className='tc pt6' style={{ background: colorTwo, color: colorOne }}>
-            <p className='f5 code pb5 mt0'>
+          <div className='tc pt5 pt6-ns' style={{ background: colorTwo, color: colorOne }}>
+            <p className='f5 code pb4 pb5-ns mt0'>
               {contrast.ratio(colorOne, colorTwo).toFixed(2)} contrast {contrast.score(colorOne, colorTwo)}
             </p>
           </div>
           <Combination colorOne={colorOne} colorTwo={colorTwo} key={colorOne} />
         </ReactCSSTransitionGroup>
         <div className='ph4 pb4 pt4-ns cf'>
-          <div className='tc cf mw6 center ph0 ph4-ns mb6'>
+          <div className='tc center ph0 ph4-ns mb6' style={{ maxWidth: '40rem'}}>
             <button
               className='dib bg-hover-near-white input-reset ba br1 ph3 ph4-ns pv2 pv3-ns fw6 f6 mr3 cursor'
               style={{ color: colorTwo, backgroundColor: colorOne, borderColor: colorOne }}
