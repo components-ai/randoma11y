@@ -1,4 +1,8 @@
 {
+  "alias": [
+    "randoma11y.com",
+    "www.randoma11y.com"
+  ],
   "builds": [
     {
       "src": "package.json",
