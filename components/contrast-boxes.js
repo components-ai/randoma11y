@@ -1,5 +1,6 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { Styled, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 import namer from 'color-namer'
 
 const ContrastBox = ({ color, backgroundColor }) => (
@@ -12,15 +13,15 @@ const ContrastBox = ({ color, backgroundColor }) => (
       width: ['100%', '50%', '50%']
     }}
   >
-    <Styled.h4
+    <h4
       sx={{
         m: 0,
         fontSize: 3
       }}
     >
       {namer(color).pantone[0].name}
-    </Styled.h4>
-    <Styled.h3
+    </h4>
+    <h3
       sx={{
         m: 0,
         fontSize: [4, 6, 7],
@@ -28,7 +29,7 @@ const ContrastBox = ({ color, backgroundColor }) => (
       }}
     >
       {color}
-    </Styled.h3>
+    </h3>
   </div>
 )
 

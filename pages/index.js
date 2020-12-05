@@ -1,6 +1,7 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
+import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
-import { Styled, jsx } from 'theme-ui'
 import contrast from 'get-contrast'
 
 import Layout from '../components/layout'
@@ -56,7 +57,7 @@ export default () => {
   if (!colorPair.length) {
     return (
       <Layout>
-        <Styled.h1>Generating color pair...</Styled.h1>
+        <h1>Generating color pair...</h1>
       </Layout>
     )
   }
@@ -68,7 +69,7 @@ export default () => {
   
   return (
     <Layout colorPair={colorPair}>
-      <Styled.p
+      <p
         sx={{
           textAlign: 'center',
           fontWeight: 500,
@@ -76,7 +77,7 @@ export default () => {
         }}
       >
         {contrastRatio} contrast {contrastScore}
-      </Styled.p>
+      </p>
       <ContrastBoxes colorPair={colorPair} />
       <div
         sx={{
