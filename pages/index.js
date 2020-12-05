@@ -10,7 +10,7 @@ import ContrastBoxes from '../components/contrast-boxes'
 
 import { vote, getColorPair } from '../lib'
 
-export default () => {
+const Page = () => {
   const [colorPair, setColorPair] = useState([])
 
   const newColorPair = () => {
@@ -114,3 +114,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default Page
