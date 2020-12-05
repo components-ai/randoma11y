@@ -3,25 +3,30 @@
 import { Global } from "@emotion/core";
 import { Container, ThemeProvider, jsx } from "theme-ui";
 import Head from "next/head";
+
 import theme from "../theme";
 
 export default ({ children, colorPair = [] }) => (
   <ThemeProvider theme={theme}>
     <div>
       <Head>
-        <html lang="en" />
+        <title>Randoma11y</title>
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
         />
-        <title>Randoma11y</title>
+        <link
+          rel="shortcut icon"
+          href="https://user-images.githubusercontent.com/1424573/63131613-9862b880-bf7b-11e9-99d8-09ef94854999.png"
+        />
         <meta
           property="description"
           content="Get random, accessible color combinations"
         />
-        <link
-          rel="shortcut icon"
-          href="https://user-images.githubusercontent.com/1424573/63131613-9862b880-bf7b-11e9-99d8-09ef94854999.png"
+        <meta property="og:title" content="Randoma11y" />
+        <meta
+          property="og:description"
+          content="Get random, accessible color combinations"
         />
         <meta property="og:url" content="https://randoma11y.com" />
         <meta property="og:type" content="website" />
