@@ -2,14 +2,13 @@
 /** @jsx jsx */
 import { Global } from "@emotion/core";
 import { Container, ThemeProvider, jsx } from "theme-ui";
-import { Helmet } from "react-helmet";
-
+import Head from "next/head";
 import theme from "../theme";
 
 export default ({ children, colorPair = [] }) => (
   <ThemeProvider theme={theme}>
     <div>
-      <Helmet>
+      <Head>
         <html lang="en" />
         <meta
           name="viewport"
@@ -28,7 +27,7 @@ export default ({ children, colorPair = [] }) => (
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en" />
         <meta property="og:site_name" content="Randoma11y" />
-      </Helmet>
+      </Head>
       <Global
         styles={{
           body: {
