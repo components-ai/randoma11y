@@ -7,17 +7,17 @@
     "dev": "next dev"
   },
   "dependencies": {
-    "@emotion/core": "10",
+    "@emotion/react": "^11.4.1",
     "@mdx-js/mdx": "^2.0.0-next.8",
     "@mdx-js/react": "^2.0.0-next.8",
     "color-namer": "^1.4.0",
-    "firebase": "^8.1.2",
-    "get-contrast": "^2.0.0",
-    "next": "^10.0.3",
+    "firebase": "^8.9.1",
+    "get-contrast": "^3.0.0",
+    "next": "^11.0.1",
     "random-hex-color": "^1.0.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "tachyons": "^5.0.0-0",
-    "theme-ui": "^0.6.0-alpha.1"
+    "theme-ui": "^0.10.0"
   }
 }

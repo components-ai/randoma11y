@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { Global } from "@emotion/core";
-import { Container, ThemeProvider, jsx } from "theme-ui";
+import { Global } from "@emotion/react";
+import { ThemeProvider, jsx } from "theme-ui";
 import Head from "next/head";
 
 import theme from "../theme";
@@ -36,6 +36,7 @@ export default ({ children, colorPair = [] }) => (
       <Global
         styles={{
           body: {
+            fontFamily: "system-ui, sans-serif",
             margin: 0,
             color: colorPair[0],
             backgroundColor: colorPair[1],
@@ -48,48 +49,48 @@ export default ({ children, colorPair = [] }) => (
       <header
         sx={{
           borderBottom: "thin solid",
+          px: [4, 5, 5],
+          py: 2,
         }}
       >
-        <Container>
-          <h1
+        <h1
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            fontSize: [2, 3, 3],
+          }}
+        >
+          <span
             sx={{
               display: "flex",
-              alignItems: "center",
-              fontSize: [2, 3, 3],
+              flexDirection: "column",
+              mr: 3,
             }}
           >
             <span
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                mr: 3,
+                p: 2,
+                border: "thin solid",
               }}
-            >
-              <span
-                sx={{
-                  p: 2,
-                  border: "thin solid",
-                }}
-              />
-              <span
-                sx={{
-                  p: 2,
-                  backgroundColor: colorPair[0],
-                  border: "thin solid",
-                }}
-              />
-            </span>
-            Randoma11y
-          </h1>
-        </Container>
+            />
+            <span
+              sx={{
+                p: 2,
+                backgroundColor: colorPair[0],
+                border: "thin solid",
+              }}
+            />
+          </span>
+          Randoma11y
+        </h1>
       </header>
-      <Container
+      <div
         sx={{
           py: [4, 5, 5],
         }}
       >
         {children}
-      </Container>
+      </div>
       <footer
         sx={{
           borderTop: "thin solid",
@@ -97,19 +98,19 @@ export default ({ children, colorPair = [] }) => (
           py: [4, 5, 6],
         }}
       >
-        <Container
+        <div
           sx={{
             fontSize: [0, 0, 1],
           }}
         >
-          © Copyright 2016-2020,{" "}
+          © Copyright 2016-2021,{" "}
           <a
             sx={{ color: colorPair[0], fontWeight: "bold" }}
             href="https://components.ai"
           >
             Components AI
           </a>
-        </Container>
+        </div>
       </footer>
     </div>
   </ThemeProvider>
