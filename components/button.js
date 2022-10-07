@@ -7,13 +7,18 @@ const Button = ({ color, backgroundColor, borderColor, ...props }) => (
     sx={{
       color,
       backgroundColor,
+      cursor: 'pointer',
       border: 'thin solid',
       borderColor,
       borderRadius: 4,
       px: 5,
       py: 3,
       fontSize: 3,
-      fontWeight: 500
+      fontWeight: 500,
+      transition: 'filter .25s ease',
+      ':hover': {
+        filter: 'brightness(120%)',
+      }
     }}
     {...props}
   />

@@ -40,10 +40,14 @@ export default ({ children, colorPair = [] }) => (
             margin: 0,
             color: colorPair[0],
             backgroundColor: colorPair[1],
-            transition: 'color, backgroundColor .2s ease',
+          },
+          body: {
+            color: 'inherit',
+            backgroundColor: 'inherit',
           },
           "*": {
             boxSizing: "border-box",
+            transition: 'color .2s ease, background-color .3s ease',
           },
         }}
       />
@@ -59,28 +63,21 @@ export default ({ children, colorPair = [] }) => (
             display: "flex",
             alignItems: "center",
             fontSize: [2, 3, 3],
+            gap: 3,
           }}
         >
           <span
             sx={{
               display: "flex",
               flexDirection: "column",
-              mr: 3,
-            }}
-          >
-            <span
-              sx={{
-                p: 2,
-                border: "thin solid",
-              }}
-            />
-            <span
-              sx={{
-                p: 2,
-                backgroundColor: colorPair[0],
-                border: "thin solid",
-              }}
-            />
+              justifyContent: 'center',
+              height: '24px',
+              width: '24px',
+              backgroundImage: 'linear-gradient(90deg, '+colorPair[0]+' 50%, transparent 50%, transparent 100%)',
+              boxShadow: '0 0 0 2px '+colorPair[0],
+              borderRadius: '9999px',
+
+            }}>
           </span>
           Randoma11y
         </h1>
@@ -106,7 +103,7 @@ export default ({ children, colorPair = [] }) => (
         >
           © Copyright 2016-2022,{" "}
           <a
-            sx={{ color: colorPair[0], fontWeight: "bold" }}
+            sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
             href="https://components.ai"
           >
             Components AI
