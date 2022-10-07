@@ -3,6 +3,7 @@
 import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
 import contrast from 'get-contrast'
+import { ArrowUpCircle, ArrowDownCircle, Shuffle } from 'react-feather'
 
 import Layout from '../components/layout'
 import Button from '../components/button'
@@ -81,8 +82,12 @@ const Page = () => {
       <ContrastBoxes colorPair={colorPair} />
       <div
         sx={{
-          pt: [3, 4, 5],
-          textAlign: 'center'
+          py: [3, 4, 5],
+          display: 'grid',
+          gridTemplateColumns: ['1fr', '1fr 1fr 1fr'],
+          gap: '24px',
+          mx: 'auto',
+          maxWidth: '64rem',
         }}
       >
         <Button
@@ -90,7 +95,7 @@ const Page = () => {
           backgroundColor={colorA}
           onClick={upvote}
         >
-          Upvote
+          <ArrowUpCircle size={24} /> Upvote
         </Button>
         <Button
           color={colorA}
@@ -98,17 +103,17 @@ const Page = () => {
           onClick={downvote}
           sx={{ ml: 3 }}
         >
+          <ArrowDownCircle size={24} />
           Downvote
         </Button>
-        <br />
         <Button
           color={colorA}
           backgroundColor={colorB}
           borderColor={colorB}
           onClick={skip}
-          sx={{ mt: 3, ml: -3 }}
         >
-          Skip
+          <Shuffle size={20} />
+          Regenerate
         </Button>
       </div>
     </Layout>

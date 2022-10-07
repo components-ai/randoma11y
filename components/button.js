@@ -10,12 +10,16 @@ const Button = ({ color, backgroundColor, borderColor, ...props }) => (
       cursor: 'pointer',
       border: 'thin solid',
       borderColor,
-      borderRadius: 4,
+      borderRadius: '6px',
       px: 5,
       py: 3,
       fontSize: 3,
       fontWeight: 500,
       transition: 'filter .25s ease',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '8px',
       ':hover': {
         filter: 'brightness(120%)',
       }
