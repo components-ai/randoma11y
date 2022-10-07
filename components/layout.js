@@ -35,11 +35,12 @@ export default ({ children, colorPair = [] }) => (
       </Head>
       <Global
         styles={{
-          body: {
+          html: {
             fontFamily: "system-ui, sans-serif",
             margin: 0,
             color: colorPair[0],
             backgroundColor: colorPair[1],
+            transition: 'color, backgroundColor .2s ease',
           },
           "*": {
             boxSizing: "border-box",
@@ -103,7 +104,7 @@ export default ({ children, colorPair = [] }) => (
             fontSize: [0, 0, 1],
           }}
         >
-          © Copyright 2016-2021,{" "}
+          © Copyright 2016-2022,{" "}
           <a
             sx={{ color: colorPair[0], fontWeight: "bold" }}
             href="https://components.ai"
