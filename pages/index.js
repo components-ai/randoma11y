@@ -120,9 +120,8 @@ const Page = () => {
         sx={{
           ml: 'auto',
           height: '100%',
-          bg: 'salmon',
-            display: 'flex',
-            alignItems: 'stretch',
+          display: 'flex',
+          alignItems: 'stretch',
         }}
       >
         <div sx={{ display: 'none' }}>

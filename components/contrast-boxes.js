@@ -111,13 +111,13 @@ const Quote = () => {
       ml: 0,
       pl: 4,
       width: '100%',
-    }}><p sx={{ fontWeight: 900, mb: 2, fontSize: '24px'}}>Color is my day-long obsession, joy and torment.</p><footer><i>Claude Monet</i></footer></blockquote>
+    }}><p sx={{ fontWeight: 900, mb: 2, fontSize: '24px'}}>Color is my day-long obsession, <br />joy, and torment.</p><footer><i>Claude Monet</i></footer></blockquote>
   )
 }
 
 const Text = () => {
   return (
-    <p>
+    <p sx={{ maxWidth: '80ch', lineHeight: '1.5', }}>
 Color contrast is the difference in brightness between foreground and background colors. For accessibility purposes, aim for a 4.5:1 ratio between the foreground color (e.g. text, links, etc.) and the background color. This ratio ensures people with moderately low vision can tell the colors apart and see your content.
     </p>
   )
@@ -209,6 +209,8 @@ const ContrastBoxes = ({ colorPair }) => (
       width: '100%',
       gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
       gap: 3,
+      mx: 'auto',
+      maxWidth: '96rem',
     }}
   >
     <ContrastBox
