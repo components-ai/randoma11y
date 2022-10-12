@@ -3,33 +3,160 @@
 import { jsx } from 'theme-ui'
 import namer from 'color-namer'
 
+const Sparkline = () => {
+  return (
+<article sx={{ mt: 4, borderRadius: '0px', py: 2, px: 3, boxShadow: '0 0 0 1px currentColor' }}><div sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><dl><dt sx={{ fontSize: 1 }}>Label</dt><dd sx={{ ml: 0, pl: 0, fontWeight: 700, fontSize: '40px' }}>9,173</dd></dl><svg width="160" height="60"><path d="M0 45C5.145 45 9.555 20.4 14.7 20.4C19.845 20.4 24.255 35.400000000000006 29.4 35.400000000000006C34.544999999999995 35.400000000000006 38.955 6.600000000000001 44.099999999999994 6.600000000000001C49.245 6.600000000000001 53.654999999999994 22.200000000000003 58.8 22.200000000000003C63.945 22.200000000000003 68.355 45 73.5 45C78.645 45 83.05499999999999 33.6 88.19999999999999 33.6C93.34499999999998 33.6 97.755 52.8 102.89999999999999 52.8C108.04499999999999 52.8 112.455 38.400000000000006 117.6 38.400000000000006C122.74499999999999 38.400000000000006 127.15499999999999 54.6 132.29999999999998 54.6C137.445 54.6 141.855 27.6 147 27.6C147 27.6 147 27.6 147 27.6 " fill="none" fillOpacity="1" stroke="currentColor" strokeOpacity="1" strokeLinecap="butt" strokeWidth="2" strokeDasharray="0"></path></svg></div></article>
+  )
+}
+
+const Scale = () => {
+  return (
+  <section sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'stretch', gap: '1px', height: '32px'}}>
+     <div sx={{ opacity: '100%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '90%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '80%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '70%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '60%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '50%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '40%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '30%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '20%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+     <div sx={{ opacity: '10%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+  </section>
+  )
+}
+
+
+const Badge = ({ }) => {
+  return (
+    <div sx={{ display: 'flex', gap: '1em', mt: 3}}>
+    <div sx={{ height: '24px', aspectRatio: '1 / 1', bg: 'currentColor', borderRadius: '9999px'}}></div>
+    <span sx={{borderRadius: '9999px', boxShadow: '0 0 0 1px currentColor', px: 3, py: 1, fontSize: '12px' }}>Badge</span>
+    </div>
+  )
+}
+
+const FormInput = ({label = 'Input Label', ...props}) => {
+  return (
+    <form>
+    <label sx={{ display: 'block'}}>
+      <span>
+        {label}  
+      </span>
+      <input type='text' sx={{
+        width: '100%',
+        WebkitAppearance: 'none',
+        appearance: 'none',
+        borderWidth: '0px',
+        boxShadow: '0 0 0 1px currentColor',
+        borderStyle: 'solid',
+        background: 'transparent',
+        color: 'inherit',
+        padding: '8px',
+        marginTop: '8px',
+        transition: 'all .2s ease',
+        ':focus-visible': {
+          outline: 0,
+          boxShadow: '0 0 0 2px currentColor',
+          boxShadow: 'none',
+        },
+        ':focus': {
+          outline: 0,
+          border: 'none',
+          boxShadow: '0 0 0 2px currentColor',
+        }
+      }} />
+    </label>
+    
+    </form>
+  )
+}
+
+const Border = () => {
+  return (
+    <hr sx={{ backgroundColor: 'currentColor', padding: 0, height: '4px', border: 0, display: 'block', color: 'inherit' }} />
+  )
+}
+
+const BorderStripe = () => {
+  return (
+    <hr sx={{ 
+      backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent  8px, currentColor 8px, currentColor 10px)', 
+      padding: 0, 
+      aspectRatio: '4 / 1',
+      border: 0, 
+      display: 'block', 
+      color: 'inherit' 
+    }} />
+  )
+}
+
+const Progress = () => {
+  return (
+    <label sx={{ display: 'block', my: 3, }}>
+      <span sx={{ display: 'block', mb: '8px', }}>Progress</span>
+    <div sx={{ height: '16px', boxShadow: '0 0 0 1px currentColor', color: 'inherit' }}>
+      <div sx={{ width: '44%', height: '100%', backgroundColor: 'currentColor', }}></div>
+    </div>
+    </label>
+  )
+}
+
+const Quote = () => {
+  return (
+    <blockquote sx={{ 
+      borderLeft: '4px solid currentcolor',
+      ml: 0,
+      pl: 4,
+      width: '100%',
+    }}><p sx={{ fontWeight: 900, mb: 2, fontSize: '24px'}}>Color is my day-long obsession, joy and torment.</p><footer><i>Claude Monet</i></footer></blockquote>
+  )
+}
+
+const Text = () => {
+  return (
+    <p>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+    </p>
+  )
+}
+
 const ContrastBox1 = ({ color, backgroundColor }) => (
   <div
     sx={{
       mt: [3, 4, 5],
       color,
       backgroundColor,
-      p: [3, 4, 6],
-      width: ['100%', '50%', '50%']
+      p: [3, 4, '80px'],
+      outline: '1px solid currentColor',
     }}
   >
     <h4
       sx={{
         m: 0,
-        fontSize: 3
+        fontSize: 3,
       }}
     >
       {namer(color).pantone[0].name}
     </h4>
-    <h3
-      sx={{
-        m: 0,
-        fontSize: [4, 6, 7],
-        fontWeight: 800
-      }}
-    >
-      {color}
-    </h3>
+      <h3
+        sx={{
+          m: 0,
+          fontSize: [4, 6, 7],
+          fontWeight: 900
+        }}
+      >
+        {color}
+      </h3>
+    <Border />
+    <BorderStripe />
+    <Quote />
+    <Text />
+    <Progress />
+    <FormInput />
+    <Badge />
+    <Scale />
+    <Sparkline />
   </div>
 )
 
@@ -39,8 +166,8 @@ const ContrastBox = ({ color, backgroundColor }) => (
       mt: [3, 4, 5],
       color,
       backgroundColor,
-      p: [3, 4, 6],
-      width: ['100%', '50%', '50%']
+      p: [3, 4, '80px'],
+      outline: '1px solid currentColor',
     }}
   >
     <h4
@@ -60,15 +187,26 @@ const ContrastBox = ({ color, backgroundColor }) => (
     >
       {color}
     </h3>
+    <Border />
+    <BorderStripe />
+    <Quote />
+    <Text />
+    <Progress />
+    <FormInput />
+    <Badge />
+    <Scale />
+    <Sparkline />
   </div>
 )
 
 const ContrastBoxes = ({ colorPair }) => (
   <div
     sx={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      width: '100%'
+      px: 4,
+      display: 'grid',
+      width: '100%',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(480px, 1fr))',
+      gap: 3,
     }}
   >
     <ContrastBox
