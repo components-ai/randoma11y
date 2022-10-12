@@ -135,9 +135,9 @@ const Page = () => {
         </Button>
         </div>
 <Button
-          color={colorB}
-          backgroundColor={colorA}
-          borderColor={colorA}
+          color={colorA}
+          backgroundColor={colorB}
+          borderColor={colorB}
           onClick={skip}
         >
           New colors
