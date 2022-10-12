@@ -53,6 +53,8 @@ const FormInput = ({label = 'Input Label', ...props}) => {
         background: 'transparent',
         color: 'inherit',
         padding: '8px',
+        fontWeight: 700,
+        fontSize: 3,
         marginTop: '8px',
         transition: 'all .2s ease',
         ':focus-visible': {
@@ -83,7 +85,7 @@ const BorderStripe = () => {
     <hr sx={{ 
       backgroundImage: 'repeating-linear-gradient(-45deg, transparent, transparent  8px, currentColor 8px, currentColor 10px)', 
       padding: 0, 
-      aspectRatio: '4 / 1',
+      aspectRatio: '6 / 1',
       border: 0, 
       display: 'block', 
       color: 'inherit' 
@@ -116,7 +118,7 @@ const Quote = () => {
 const Text = () => {
   return (
     <p>
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+Color contrast is the difference in brightness between foreground and background colors. For accessibility purposes, aim for a 4.5:1 ratio between the foreground color (e.g. text, links, etc.) and the background color. This ratio ensures people with moderately low vision can tell the colors apart and see your content.
     </p>
   )
 }
@@ -205,7 +207,7 @@ const ContrastBoxes = ({ colorPair }) => (
       px: 4,
       display: 'grid',
       width: '100%',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(480px, 1fr))',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
       gap: 3,
     }}
   >

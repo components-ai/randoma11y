@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
 import contrast from 'get-contrast'
-import { ArrowUpCircle, ArrowDownCircle, Shuffle } from 'react-feather'
+import { ArrowRightCircle, ArrowUpCircle, ArrowDownCircle, Shuffle } from 'react-feather'
 
 import Layout from '../components/layout'
 import Button from '../components/button'
@@ -70,26 +70,62 @@ const Page = () => {
   
   return (
     <Layout colorPair={colorPair}>
-      <p
+<header
         sx={{
+          display: 'sticky',
+          top: 0,
+          borderBottom: "thin solid",
+          display: 'grid',
+          alignItems: 'center',
+          gridTemplateColumns: '1fr 1fr 1fr'
+        }}
+      >
+        <h1
+          sx={{
+            display: "flex",
+            m: 0,
+            alignItems: "center",
+            fontSize: [2, 2, 2],
+            gap: 3,
+            pl: 4,
+          }}
+        >
+          <span
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: 'center',
+              height: '24px',
+              width: '24px',
+              backgroundImage: 'linear-gradient(90deg, '+colorPair[0]+' 50%, transparent 50%, transparent 100%)',
+              boxShadow: '0 0 0 2px '+colorPair[0],
+              borderRadius: '9999px',
+
+            }}>
+          </span>
+          <span sx={{ py: 3 }}>Randoma11y</span>
+        </h1>
+<p
+        sx={{
+          mx: 'auto',
           textAlign: 'center',
           fontWeight: 500,
-          fontSize: [2, 3, 4]
+          fontSize: 2,
+            fontFamily: 'monospace, monospace',
         }}
       >
         {contrastRatio} contrast {contrastScore}
       </p>
-      <ContrastBoxes colorPair={colorPair} />
-      <div
+<div
         sx={{
-          py: [3, 4, 5],
-          display: 'grid',
-          gridTemplateColumns: ['1fr', '1fr 1fr 1fr'],
-          gap: '24px',
-          mx: 'auto',
-          maxWidth: '64rem',
+          ml: 'auto',
+          height: '100%',
+          bg: 'salmon',
+            display: 'flex',
+            alignItems: 'stretch',
         }}
       >
+        <div sx={{ display: 'none' }}>
         <Button
           color={colorB}
           backgroundColor={colorA}
@@ -97,6 +133,17 @@ const Page = () => {
         >
           <ArrowUpCircle size={24} /> Upvote
         </Button>
+        </div>
+<Button
+          color={colorB}
+          backgroundColor={colorA}
+          borderColor={colorA}
+          onClick={skip}
+        >
+          Next color combo
+          <ArrowRightCircle size={20} />
+        </Button>
+        <div sx={{ display: 'none' }}>
         <Button
           color={colorA}
           backgroundColor={colorB}
@@ -106,16 +153,13 @@ const Page = () => {
           <ArrowDownCircle size={24} />
           Downvote
         </Button>
-        <Button
-          color={colorA}
-          backgroundColor={colorB}
-          borderColor={colorB}
-          onClick={skip}
-        >
-          <Shuffle size={20} />
-          Regenerate
-        </Button>
+    </div>
+        
       </div>
+      </header>
+      
+      <ContrastBoxes colorPair={colorPair} />
+      
     </Layout>
   )
 }

@@ -10,7 +10,7 @@ export default ({ children, colorPair = [] }) => (
   <ThemeProvider theme={theme}>
     <div>
       <Head>
-        <title>Randoma11y</title>
+        <title>Randoma11y - Accessible color combinations</title>
         <meta
           name="viewport"
           content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
@@ -51,40 +51,10 @@ export default ({ children, colorPair = [] }) => (
           },
         }}
       />
-      <header
-        sx={{
-          borderBottom: "thin solid",
-          px: [4, 5, 5],
-          py: 2,
-        }}
-      >
-        <h1
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            fontSize: [2, 3, 3],
-            gap: 3,
-          }}
-        >
-          <span
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: 'center',
-              height: '24px',
-              width: '24px',
-              backgroundImage: 'linear-gradient(90deg, '+colorPair[0]+' 50%, transparent 50%, transparent 100%)',
-              boxShadow: '0 0 0 2px '+colorPair[0],
-              borderRadius: '9999px',
-
-            }}>
-          </span>
-          Randoma11y
-        </h1>
-      </header>
+      
       <div
         sx={{
-          py: [4, 5, 5],
+          pb: [4, 5, 5],
         }}
       >
         {children}
