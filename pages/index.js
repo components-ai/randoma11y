@@ -88,6 +88,7 @@ const Page = () => {
             fontSize: [2, 2, 2],
             gap: 3,
             pl: 4,
+            py: 3,
           }}
         >
           <span
@@ -103,18 +104,18 @@ const Page = () => {
 
             }}>
           </span>
-          <span sx={{ py: 3 }}>Randoma11y</span>
+          <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </h1>
 <p
         sx={{
           mx: 'auto',
           textAlign: 'center',
           fontWeight: 500,
-          fontSize: 2,
+          fontSize: [0,1,2],
             fontFamily: 'monospace, monospace',
         }}
       >
-        {contrastRatio} contrast {contrastScore}
+        {contrastRatio} <span sx={{display: ['none', 'inline-block', 'inline-block']}}>contrast {contrastScore}</span>
       </p>
 <div
         sx={{
@@ -139,7 +140,7 @@ const Page = () => {
           borderColor={colorA}
           onClick={skip}
         >
-          Next color combo
+          New colors
           <ArrowRightCircle size={20} />
         </Button>
         <div sx={{ display: 'none' }}>
