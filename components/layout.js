@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { Global } from "@emotion/react";
 import { ThemeProvider, jsx } from "theme-ui";
+import { Sliders } from 'react-feather'
 import Head from "next/head";
 
 import theme from "../theme";
@@ -58,6 +59,26 @@ export default ({ children, colorPair = [] }) => (
         }}
       >
         {children}
+  <div sx={{ textAlign: 'center', pt: 5, }}>
+          <a
+            sx={{ 
+              display: 'inline-flex',
+              mx: 'auto',
+              color: colorPair[0], fontWeight: "bold", textDecoration: 'none', 
+                gap: '8px',
+                transition: 'all .25s ease',
+                ':hover': {
+                  filter: 'hue-rotate(140deg)',
+                  opacity: .8,
+
+                }
+
+            }}
+            href="https://components.ai/u/system/cl97otyus041709lblou2lylf/cl97ou8xs068609l3he0g8kau"
+          >
+            <Sliders size={20} strokeWidth={2} /> Advanced Editor
+          </a>
+     </div> 
       </div>
       <footer
         sx={{
