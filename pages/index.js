@@ -165,7 +165,7 @@ const Page = ({ pinnedColor }) => {
 export async function getServerSideProps(context) {
   return {
     props: {
-      pinnedColor: context.query.color,
+      pinnedColor: context.query.color? context.query.color : null,
     },
   }
 }

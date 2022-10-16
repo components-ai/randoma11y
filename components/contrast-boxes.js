@@ -159,6 +159,14 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
     <Badge />
     <Scale />
     <Sparkline />
+    <pre sx={{ mt: 4, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
+      <code>
+      {`.theme-alt {`}<br />
+        &nbsp;&nbsp;color: {color};<br />
+        &nbsp;&nbsp;background-color: {backgroundColor};<br />
+      {`}`}
+      </code>
+    </pre>
   </div>
 )
 
@@ -198,6 +206,14 @@ const ContrastBox = ({ color, backgroundColor }) => (
     <Badge />
     <Scale />
     <Sparkline />
+    <pre sx={{ mt: 4, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
+      <code>
+      {`.theme {`}<br />
+        &nbsp;&nbsp;color: {color};<br />
+        &nbsp;&nbsp;background-color: {backgroundColor};<br />
+      {`}`}
+      </code>
+    </pre>
   </div>
 )
 
