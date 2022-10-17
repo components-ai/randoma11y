@@ -27,14 +27,86 @@ const Scale = () => {
 }
 
 
-const Badge = ({ }) => {
+const Symbols = ({ }) => {
   return (
-    <div sx={{ display: 'flex', gap: '1em', mt: 3}}>
-    <div sx={{ height: '24px', aspectRatio: '1 / 1', bg: 'currentColor', borderRadius: '9999px'}}></div>
-    <span sx={{borderRadius: '9999px', boxShadow: '0 0 0 1px currentColor', px: 3, py: 1, fontSize: '12px' }}>Badge</span>
+    <div sx={{ display: 'grid', gap: '.5em', mt: 3, gridTemplateColumns: 'repeat(auto-fill, minmax(24px, 1fr))'}}>
+    <div sx={{  aspectRatio: '1 / 1', bg: 'currentColor', borderRadius: '9999px'}}></div>
+    <div sx={{  aspectRatio: '1 / 1', bg: 'transparent', 
+        boxShadow: '0 0 0 1px currentColor',
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(45deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(90deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(135deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(180deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(225deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(270deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
+    <div sx={{ 
+         
+        aspectRatio: '1 / 1', 
+        boxShadow: '0 0 0 1px currentColor',
+        backgroundImage: 'linear-gradient(315deg, currentColor 50%, transparent 50%, transparent 100%)', 
+        borderRadius: '9999px'}}></div>
     </div>
   )
 }
+
+const Badge = ({ }) => {
+  return (
+    <section sx={{ display: 'flex', gap: '.5em', alignItems: 'center', mt: 3,   }}>
+      <div sx={{ 
+        width: '44px', 
+        boxShadow: '0 0 0 2px currentColor', 
+        borderRadius: '9999px', p: 1 
+      }}>
+        <img src="https://components-ai.s3.amazonaws.com/avatars/ui-avatar-4.jpeg" 
+             sx={{ display: 'block', maxWidth: '100%', borderRadius: '9999px', filter: 'grayscale(100%)' }} /></div> 
+      <span sx={{
+        borderRadius: '9999px', 
+        boxShadow: '0 0 0 1px currentColor', 
+        px: 3, py: 1, 
+        fontSize: '12px' 
+      }}>
+        Badge
+      </span>
+    </section>
+)}
+
 
 const FormInput = ({label = 'Input Label', ...props}) => {
   return (
@@ -69,7 +141,55 @@ const FormInput = ({label = 'Input Label', ...props}) => {
         }
       }} />
     </label>
-    
+    <fieldset sx={{ mt: 3, mx: 0, border: 0, padding: 0, accentColor: 'currentColor', display: 'flex', gap: '1em' }}>
+      <legend sx={{ all: 'unset', mb: 2 }}>Do you have a favorite color?</legend>
+      <label sx={{ gap: '4px', display: 'inline-flex', alignItems: 'center', lineHeight: 1, ':hover > input': { boxShadow: 'inset 0 0 0 2px currentColor', transition: 'all .2s ease' } }}>
+        <input name='apples' type='radio' 
+          checked
+          sx={{ 
+            appearance: 'none', 
+            WebkitAppearance: 'none', 
+            p: 0,
+            m: 0,
+            boxShadow: 'inset 0 0 0 1px currentColor', 
+            height: '16px', width: '16px', 
+            borderRadius: '9999px', 
+            accentColor: 'currentColor',  
+            backgroundPosition: 'center center',
+            transition: 'all .2s ease',
+            backgroundImage: 'radial-gradient(currentColor 0%, transparent 0%, transparent 100%)',
+            ':checked': {
+              boxShadow: 'inset 0 0 0 2px currentColor', 
+              backgroundImage: 'radial-gradient(circle, currentColor 35%, transparent 35%, transparent 100%)',
+              backgroundSize: '100%',
+            }
+          }} /> 
+            <span>Yes</span>
+          </label>
+<label sx={{ gap: '4px', display: 'inline-flex', alignItems: 'center', lineHeight: 1, ':hover > input': { boxShadow: 'inset 0 0 0 2px currentColor', transition: 'all .2s ease' } }}>
+        <input name='apples' type='radio' 
+          sx={{ 
+            appearance: 'none', 
+            WebkitAppearance: 'none', 
+            p: 0,
+            m: 0,
+            boxShadow: 'inset 0 0 0 1px currentColor', 
+            height: '16px', width: '16px', 
+            borderRadius: '9999px', 
+            accentColor: 'currentColor',  
+            backgroundPosition: 'center center',
+            transition: 'all .2s ease',
+            backgroundImage: 'radial-gradient(currentColor 0%, transparent 0%, transparent 100%)',
+            ':checked': {
+              boxShadow: 'inset 0 0 0 2px currentColor', 
+              backgroundImage: 'radial-gradient(circle, currentColor 35%, transparent 35%, transparent 100%)',
+              backgroundSize: '100%',
+            }
+          }} /> 
+            <span>No</span>
+          </label>
+    </fieldset>
+
     </form>
   )
 }
@@ -152,14 +272,7 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
       </h3>
     <Border />
     <BorderStripe />
-    <Quote />
-    <Text />
-    <Progress />
-    <FormInput />
-    <Badge />
-    <Scale />
-    <Sparkline />
-    <pre sx={{ mt: 4, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
+<pre sx={{ mt: 3, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
       <code>
       {`.theme-alt {`}<br />
         &nbsp;&nbsp;color: {color};<br />
@@ -167,6 +280,15 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
       {`}`}
       </code>
     </pre>
+    <Quote />
+    <Text />
+    <Progress />
+    <FormInput />
+    <Badge />
+    <Symbols />
+    <Scale />
+    <Sparkline />
+    
   </div>
 )
 
@@ -199,14 +321,7 @@ const ContrastBox = ({ color, backgroundColor }) => (
     </h3>
     <Border />
     <BorderStripe />
-    <Quote />
-    <Text />
-    <Progress />
-    <FormInput />
-    <Badge />
-    <Scale />
-    <Sparkline />
-    <pre sx={{ mt: 4, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
+    <pre sx={{ mt: 3, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
       <code>
       {`.theme {`}<br />
         &nbsp;&nbsp;color: {color};<br />
@@ -214,6 +329,13 @@ const ContrastBox = ({ color, backgroundColor }) => (
       {`}`}
       </code>
     </pre>
+    <Quote />
+    <Text />
+    <Progress />
+    <FormInput />
+    <Badge />
+    <Scale />
+    <Sparkline />
   </div>
 )
 
