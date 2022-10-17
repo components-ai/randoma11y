@@ -263,7 +263,6 @@ Color contrast is the difference in brightness between foreground and background
 const ContrastBox1 = ({ color, backgroundColor }) => (
   <div
     sx={{
-      mt: [3, 4, 5],
       color,
       backgroundColor,
       p: [3, 4, '80px'],
@@ -312,7 +311,6 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
 const ContrastBox = ({ color, backgroundColor }) => (
   <div
     sx={{
-      mt: [3, 4, 5],
       color,
       backgroundColor,
       p: [3, 4, '80px'],

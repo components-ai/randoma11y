@@ -2,12 +2,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
+import  Link  from 'next/link'
 import contrast from 'get-contrast'
-import { ArrowRightCircle, ArrowUpCircle, ArrowDownCircle } from 'react-feather'
+import { Sliders, ArrowRightCircle, ArrowUpCircle, ArrowDownCircle } from 'react-feather'
 
 import Layout from '../components/layout'
 import Button from '../components/button'
 import ContrastBoxes from '../components/contrast-boxes'
+
 
 import { vote, getColorPair } from '../lib'
 
@@ -27,6 +29,9 @@ const Page = ({ pinnedColor }) => {
   }
   const skip = () => {
     newColorPair()
+  }
+  const skiplink = (color) => {
+    setColorPair(getColorPair(color))
   }
   const handleKeyUp = (e) => {
     const { key } = e
@@ -64,11 +69,33 @@ const Page = ({ pinnedColor }) => {
     )
   }
 
+
   const [colorA, colorB] = colorPair
 
   const contrastRatio = contrast.ratio(colorA, colorB).toFixed(2)
   const contrastScore = contrast.score(colorA, colorB)
 
+  const ColorLink = ({color, ...props}) => {
+    return (
+      <Link href={{
+        pathname: '/',
+        query: { color: color },
+      }} scroll={false}
+      >
+        <a
+          onClick={() => skiplink(color)}
+          sx={{
+          display: 'block',
+          textDecoration: 'none',
+          backgroundColor: color,
+          borderRadius: '9999px',
+          height: '24px',
+          width: '24px',
+          cursor: 'pointer',
+        }} {...props} />
+      </Link>
+    )
+  }
   return (
     <Layout colorPair={colorPair}>
       <header
@@ -158,8 +185,72 @@ const Page = ({ pinnedColor }) => {
           </div>
         </div>
       </header>
+      <section sx={{
+         mx: 'auto',
+         bg: 'tranparent',
+           //boxShadow: 'inset 0 0 0 1px currentColor',
+           maxWidth: '64rem',
+    }}>
+         <div sx={{ 
+           display: 'flex',
+           gap: '8px', 
+           filter: 'saturate(100%)',
+           transition: 'filter .25s ease',
+           ':hover': {
+             filter: 'saturate(100%)'
+           },
+           ':hover': {
+             filter: 'saturate(100%)'
+           },
+           py: 4,
+           mx: 'auto',
+           justifyContent: 'center',
+         }}>
+            <div sx={{ '> a': {
+             // boxShadow: '0 0 2px 4px rgba(0,0,0,.125)'
+            }}}><ColorLink color='white' /></div>
+            <ColorLink color='black' />
+            <ColorLink color='blue' />
+            <ColorLink color='dodgerblue' />
+            <ColorLink color='skyblue' />
+            <ColorLink color='indigo' />
+            <ColorLink color='blueviolet' />
+            <ColorLink color='fuchsia' />
+            <ColorLink color='violet' />
+            <ColorLink color='hotpink' />
+            <ColorLink color='red' />
+            <ColorLink color='orangered' />
+            <ColorLink color='orange' />
+            <ColorLink color='gold' />
+            <ColorLink color='yellow' />
+            <ColorLink color='springgreen' />
+            <ColorLink color='teal' />
+            <ColorLink color='cyan' />
+         </div>
+      </section>
 
       <ContrastBoxes colorPair={colorPair} />
+<div sx={{ textAlign: 'center', pt: 5, }}>
+          <a
+            sx={{ 
+              display: 'inline-flex',
+              mx: 'auto',
+              color: colorPair[0], fontWeight: "bold", textDecoration: 'none', 
+                gap: '8px',
+                transition: 'all .25s ease',
+                ':hover': {
+                  filter: 'hue-rotate(140deg)',
+                  opacity: .8,
+
+                }
+
+            }}
+            href="https://components.ai/u/system/cl97otyus041709lblou2lylf/cl97ou8xs068609l3he0g8kau"
+          >
+            <Sliders size={20} strokeWidth={2} /> Advanced Editor
+          </a>
+     </div>
+    
     </Layout>
   )
 }
