@@ -96,7 +96,9 @@ const Badge = ({ }) => {
       }}>
         <img src="https://components-ai.s3.amazonaws.com/avatars/ui-avatar-4.jpeg" 
              sx={{ display: 'block', maxWidth: '100%', borderRadius: '9999px', filter: 'grayscale(100%)' }} /></div> 
+      <time sx={{ fontFamily: 'monospace,monospace', fontSize: 0,}}>18 JUN 2020</time>
       <span sx={{
+        ml: 'auto',
         borderRadius: '9999px', 
         boxShadow: '0 0 0 1px currentColor', 
         px: 3, py: 1, 
@@ -200,6 +202,21 @@ const Border = () => {
   )
 }
 
+const BorderCenterGradient = () => {
+  return (
+    <hr sx={{ 
+        backgroundColor: 'transparent', 
+        backgroundImage: 'linear-gradient(90deg, transparent 0%, transparent 5%, currentColor 45%, currentColor 55%, transparent 95%, transparent 100%)', 
+        padding: 0, height: '1px', border: 0, my: 4, display: 'block', color: 'inherit' }} />
+  )
+}
+
+const BorderLinearGradient = () => {
+  return (
+    <hr sx={{ backgroundColor: 'currentColor', padding: 0, height: '4px', border: 0, display: 'block', color: 'inherit' }} />
+  )
+}
+
 const BorderStripe = () => {
   return (
     <hr sx={{ 
@@ -231,7 +248,7 @@ const Quote = () => {
       ml: 0,
       pl: 4,
       width: '100%',
-    }}><p sx={{ fontWeight: 900, mb: 2, fontSize: '24px'}}>Color is my day-long obsession, <br />joy, and torment.</p><footer><i>Claude Monet</i></footer></blockquote>
+    }}><p sx={{ fontWeight: 900, mb: 2, fontSize: '20px' }}>Color is my day-long obsession, joy, and torment.</p><footer><i>Claude Monet</i></footer></blockquote>
   )
 }
 
@@ -281,14 +298,14 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
       </code>
     </pre>
     <Quote />
+    <Badge />
     <Text />
     <Progress />
     <FormInput />
-    <Badge />
     <Symbols />
     <Scale />
     <Sparkline />
-    
+    <BorderCenterGradient />
   </div>
 )
 
@@ -330,12 +347,14 @@ const ContrastBox = ({ color, backgroundColor }) => (
       </code>
     </pre>
     <Quote />
+    <Badge />
     <Text />
     <Progress />
     <FormInput />
-    <Badge />
+    <Symbols />
     <Scale />
     <Sparkline />
+    <BorderCenterGradient />
   </div>
 )
 
