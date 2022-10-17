@@ -89,8 +89,8 @@ const Page = ({ pinnedColor }) => {
           textDecoration: 'none',
           backgroundColor: color,
           borderRadius: '9999px',
-          height: '24px',
-          width: '24px',
+          height: ['32px', '24px', '24px'],
+          aspectRatio: '1/1',
           cursor: 'pointer',
         }} {...props} />
       </Link>
@@ -193,6 +193,7 @@ const Page = ({ pinnedColor }) => {
     }}>
          <div sx={{ 
            display: 'flex',
+           flexWrap: 'wrap',
            gap: '8px', 
            filter: 'saturate(100%)',
            transition: 'filter .25s ease',
@@ -203,6 +204,7 @@ const Page = ({ pinnedColor }) => {
              filter: 'saturate(100%)'
            },
            py: 4,
+           px: 4,
            mx: 'auto',
            justifyContent: 'center',
          }}>
