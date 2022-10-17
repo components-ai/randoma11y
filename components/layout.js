@@ -4,8 +4,28 @@ import { Global } from "@emotion/react";
 import { ThemeProvider, jsx } from "theme-ui";
 import { Sliders } from 'react-feather'
 import Head from "next/head";
+import Link from "next/link";
 
 import theme from "../theme";
+
+const ColorLink = ({color, ...props}) => {
+  return (
+    <Link href={{
+      pathname: '/',
+      query: { color: color }
+    }} passHref>
+      <a
+        sx={{
+        display: 'block',
+        textDecoration: 'none',
+        backgroundColor: color,
+        borderRadius: '9999px',
+        height: '24px',
+        width: '24px',
+      }} {...props} />
+    </Link>
+  )
+}
 
 export default ({ children, colorPair = [] }) => (
   <ThemeProvider theme={theme}>
@@ -80,6 +100,56 @@ export default ({ children, colorPair = [] }) => (
           </a>
      </div> 
       </div>
+      <section>
+         <div sx={{ 
+           p: 4,
+           display: 'none', 
+           gap: '8px', 
+           justifyContent: 'center', 
+           filter: 'saturate(0%)',
+           transition: 'filter .25s ease',
+           ':hover': {
+             filter: 'saturate(100%)'
+           },
+           ':hover': {
+             filter: 'saturate(100%)'
+           }
+         }}>
+            <ColorLink color='white' />
+            <ColorLink color='black' />
+            <ColorLink color='midnightblue' />
+            <ColorLink color='navy' />
+            <ColorLink color='darkblue' />
+            <ColorLink color='mediumblue' />
+            <ColorLink color='blue' />
+            <ColorLink color='royalblue' />
+            <ColorLink color='cornflowerblue' />
+            <ColorLink color='dodgerblue' />
+            <ColorLink color='deepskyblue' />
+            <ColorLink color='skyblue' />
+            <ColorLink color='lightblue' />
+            <ColorLink color='purple' />
+            <ColorLink color='violet' />
+            <ColorLink color='magenta' />
+            <ColorLink color='fuchsia' />
+            <ColorLink color='hotpink' />
+            <ColorLink color='pink' />
+            <ColorLink color='darkred' />
+            <ColorLink color='red' />
+            <ColorLink color='crimson' />
+            <ColorLink color='tomato' />
+            <ColorLink color='orange' />
+            <ColorLink color='gold' />
+            <ColorLink color='yellow' />
+            <ColorLink color='mediumspringgreen' />
+            <ColorLink color='springgreen' />
+            <ColorLink color='green' />
+            <ColorLink color='lime' />
+            <ColorLink color='teal' />
+            <ColorLink color='aqua' />
+            <ColorLink color='cyan' />
+         </div>
+      </section>
       <footer
         sx={{
           borderTop: "thin solid",

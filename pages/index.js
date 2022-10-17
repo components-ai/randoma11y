@@ -57,7 +57,9 @@ const Page = ({ pinnedColor }) => {
   if (!colorPair.length) {
     return (
       <Layout>
-        <h1>Generating color pair...</h1>
+        <div sx={{ minHeight: '66vh', display: 'flex', alignItems: 'center', justifyContent: 'center', p: 4, }}>
+          <h2>Generating color pair...</h2>
+        </div>
       </Layout>
     )
   }
