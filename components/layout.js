@@ -109,8 +109,8 @@ export default ({ children, colorPair = [] }) => {
           </a>
           <a
             sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
-            href="https://github.com/components-ai/randoma11y"
-            title="GitHub"
+            href="https://twitter.com/components_ai"
+            title="Twitter"
           >
             Twitter
           </a>
