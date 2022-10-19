@@ -260,7 +260,7 @@ const Page = ({ pinnedColor }) => {
 export async function getServerSideProps(context) {
   return {
     props: {
-      pinnedColor: context.query.color? context.query.color : null,
+      pinnedColor: context.query.color? decodeURI(context.query.color) : null,
     },
   }
 }
