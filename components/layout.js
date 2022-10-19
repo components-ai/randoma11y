@@ -26,7 +26,7 @@ export default ({ children, colorPair = [] }) => {
         />
         <link
           rel="shortcut icon"
-          href="https://user-images.githubusercontent.com/1424573/63131613-9862b880-bf7b-11e9-99d8-09ef94854999.png"
+          href="https://components-ai.s3.amazonaws.com/og/randoma11y-avatar.jpg"
         />
         <meta
           property="description"
@@ -42,8 +42,8 @@ export default ({ children, colorPair = [] }) => {
         <meta property="og:locale" content="en" />
         <meta property="og:site_name" content="Randoma11y" />
 
-        <meta property="og:image" content="https://components-ai.s3.amazonaws.com/og/og-randoma11y.jpg"/>
-        <meta property="twitter:image" content="https://components-ai.s3.amazonaws.com/og/og-randoma11y.jpg"/>
+        <meta property="og:image" content="https://components-ai.s3.amazonaws.com/og/randoma11y.jpg"/>
+        <meta property="twitter:image" content="https://components-ai.s3.amazonaws.com/og/randoma11y.jpg"/>
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="630"/>
 
