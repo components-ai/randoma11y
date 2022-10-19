@@ -43,6 +43,7 @@ export default ({ children, colorPair = [] }) => {
         <meta property="og:site_name" content="Randoma11y" />
 
         <meta property="og:image" content="https://components-ai.s3.amazonaws.com/og/og-randoma11y.jpg"/>
+        <meta property="twitter:image" content="https://components-ai.s3.amazonaws.com/og/og-randoma11y.jpg"/>
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="630"/>
 
