@@ -4,6 +4,7 @@ import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
 import  Link  from 'next/link'
 import contrast from 'get-contrast'
+import { calcAPCA } from "apca-w3";
 import { Sliders, ArrowRightCircle, ArrowUpCircle, ArrowDownCircle } from 'react-feather'
 
 import Layout from '../components/layout'
@@ -74,6 +75,8 @@ const Page = ({ pinnedColor }) => {
 
   const contrastRatio = contrast.ratio(colorA, colorB).toFixed(2)
   const contrastScore = contrast.score(colorA, colorB)
+
+  const apcaScore = calcAPCA(colorA, colorB)
 
   const ColorLink = ({color, ...props}) => {
     return (
@@ -146,9 +149,11 @@ const Page = ({ pinnedColor }) => {
           }}
         >
           {contrastRatio}{' '}
-          <span sx={{ display: ['none', 'inline-block', 'inline-block'] }}>
+          <span sx={{ display: ['none', 'inline-block', 'inline-block'], mr: 4 }}>
             contrast {contrastScore}
           </span>
+          
+          L<sub>c</sub> {apcaScore.toFixed(2)}
         </p>
         <div
           sx={{
