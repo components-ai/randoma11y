@@ -76,7 +76,8 @@ const Page = ({ pinnedColor }) => {
   const contrastRatio = contrast.ratio(colorA, colorB).toFixed(2)
   const contrastScore = contrast.score(colorA, colorB)
 
-  const apcaScore = calcAPCA(colorA, colorB)
+  const apcaScoreFg = calcAPCA(colorA, colorB)
+  const apcaScoreBg = calcAPCA(colorB, colorA)
 
   const ColorLink = ({color, ...props}) => {
     return (
@@ -148,12 +149,10 @@ const Page = ({ pinnedColor }) => {
             fontFamily: 'monospace, monospace',
           }}
         >
-          {contrastRatio}{' '}
-          <span sx={{ display: ['none', 'inline-block', 'inline-block'], mr: 4 }}>
-            contrast {contrastScore}
-          </span>
-          
-          L<sub>c</sub> {apcaScore.toFixed(2)}
+          <div sx={{display: 'flex', alignItems: 'center'}}>
+            <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorA, backgroundColor: colorB, border: '2px solid white', width: 32, height: 32, borderRadius: '50%', mr: 2 }}> L<sup>c</sup></div>{apcaScoreFg.toFixed(2)}
+            <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorB, backgroundColor: colorA, border: '2px solid white', width: 32, height: 32, borderRadius: '50%', mr: 2, ml: 4 }}> L<sup>c</sup></div>{apcaScoreBg.toFixed(2)}
+          </div>
         </p>
         <div
           sx={{
