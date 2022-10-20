@@ -4,6 +4,7 @@ import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
 import  Link  from 'next/link'
 import contrast from 'get-contrast'
+import { calcAPCA } from "apca-w3";
 import { Sliders, ArrowRightCircle, ArrowUpCircle, ArrowDownCircle } from 'react-feather'
 
 import Layout from '../components/layout'
@@ -75,10 +76,13 @@ const Page = ({ pinnedColor }) => {
   const contrastRatio = contrast.ratio(colorA, colorB).toFixed(2)
   const contrastScore = contrast.score(colorA, colorB)
 
+  const apcaScoreFg = calcAPCA(colorA, colorB)
+  const apcaScoreBg = calcAPCA(colorB, colorA)
+
   const ColorLink = ({color, ...props}) => {
     return (
       <Link href={{
-        pathname: '/',
+        pathname: '/apca',
         query: { color: color },
       }} scroll={false}
       >
@@ -108,8 +112,10 @@ const Page = ({ pinnedColor }) => {
           gridTemplateColumns: '1fr 1fr 1fr',
         }}
       >
-        <h1
+        <a
+          href='/'
           sx={{
+            textDecoration: 'none',
             display: 'flex',
             m: 0,
             alignItems: 'center',
@@ -117,6 +123,8 @@ const Page = ({ pinnedColor }) => {
             gap: 3,
             pl: 4,
             py: 3,
+            color: 'inherit',
+            fontWeight: 'bold',
           }}
         >
           <span
@@ -135,7 +143,7 @@ const Page = ({ pinnedColor }) => {
             }}
           ></span>
           <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
-        </h1>
+        </a>
         <p
           sx={{
             mx: 'auto',
@@ -145,10 +153,10 @@ const Page = ({ pinnedColor }) => {
             fontFamily: 'monospace, monospace',
           }}
         >
-          {contrastRatio}{' '}
-          <span sx={{ display: ['none', 'inline-block', 'inline-block'] }}>
-            contrast {contrastScore}
-          </span>
+          <div sx={{display: 'flex', alignItems: 'center'}}>
+            <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorA, backgroundColor: colorB, boxShadow: 'inset 0 0 0 2px currentColor', width: 32, height: 32, borderRadius: '100%', mr: 2 }}> L<sup>c</sup></div><span sx={{ width: '6ch', textAlign: 'right', }}>{apcaScoreFg.toFixed(2)}</span>
+            <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorB, backgroundColor: colorA, width: 32, height: 32, borderRadius: '50%', mr: 2, ml: 4 }}> L<sup>c</sup></div><span sx={{ width: '6ch', textAlign: 'right', }}>{apcaScoreBg.toFixed(2)}</span>
+          </div>
         </p>
         <div
           sx={{
@@ -190,9 +198,10 @@ const Page = ({ pinnedColor }) => {
          bg: 'tranparent',
            //boxShadow: 'inset 0 0 0 1px currentColor',
            maxWidth: '64rem',
+          pt: 5,
     }}>
          <div sx={{ 
-           display: 'flex',
+           display: 'none',
            flexWrap: 'wrap',
            gap: '8px', 
            filter: 'saturate(100%)',
