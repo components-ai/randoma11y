@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import { useEffect, useState } from 'react'
 import  Link  from 'next/link'
 import contrast from 'get-contrast'
-import { Sliders, ArrowRightCircle, ArrowUpCircle, ArrowDownCircle } from 'react-feather'
+import { Shuffle, Sliders, ArrowRightCircle, ArrowUpCircle, ArrowDownCircle } from 'react-feather'
 
 import Layout from '../components/layout'
 import Button from '../components/button'
@@ -84,6 +84,7 @@ const Page = ({ pinnedColor }) => {
       >
         <a
           onClick={() => skiplink(color)}
+      title={'Find matches for '+color}
           sx={{
             display: 'block',
             textDecoration: 'none',
@@ -92,6 +93,8 @@ const Page = ({ pinnedColor }) => {
             height: ['32px', '24px', '24px'],
             aspectRatio: '1/1',
             cursor: 'pointer',
+            boxShadow: '0 0 0 2px rgba(0,0,0,0), 0 0 0 4px rgba(0,0,0,0)',
+            transition: 'all .2s ease',
         }} {...props} />
       </Link>
     )
@@ -136,20 +139,34 @@ const Page = ({ pinnedColor }) => {
           ></span>
           <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </h1>
-        <p
+        <a
+          href='/apca'  
+          title='Switch algorithm'
           sx={{
             mx: 'auto',
+            my: 0,
+            textDecoration: 'none',
+            color: 'currentColor',
             textAlign: 'center',
             fontWeight: 500,
-            fontSize: [0, 1, 2],
+            fontSize: [0, 1, 3],
             fontFamily: 'monospace, monospace',
+            display: 'flex',
+            alignItems: 'stretch',
+            lineHeight: 1,
+            gap: '16px',
+            transition: 'all .2s ease',
+            ':hover':{
+              filter: 'saturate(150%), contrast(125%)'
+            }
+
           }}
         >
-          {contrastRatio}{' '}
-          <span sx={{ display: ['none', 'inline-block', 'inline-block'] }}>
-            contrast {contrastScore}
+          <span>{contrastRatio}{' '}</span>
+          <span sx={{ display: ['inline-block', 'inline-block', 'inline-block'] }}>
+            <span sx={{ bg: colorA, color: colorB  , px: 2, py: 0, borderRadius: '6px' }}>{contrastScore}</span>
           </span>
-        </p>
+        </a>
         <div
           sx={{
             ml: 'auto',
@@ -187,7 +204,7 @@ const Page = ({ pinnedColor }) => {
       </header>
       <section sx={{
          mx: 'auto',
-         bg: 'tranparent',
+         bg: 'transparent',
            //boxShadow: 'inset 0 0 0 1px currentColor',
            maxWidth: '64rem',
     }}>

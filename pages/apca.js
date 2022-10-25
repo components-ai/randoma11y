@@ -144,20 +144,29 @@ const Page = ({ pinnedColor }) => {
           ></span>
           <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </a>
-        <p
+        <a
+          href='/'
+          title='Switch algorithms'
           sx={{
+            textDecoration: 'none',
+            color: 'currentColor',
+            my: 0,
             mx: 'auto',
             textAlign: 'center',
             fontWeight: 500,
             fontSize: [0, 1, 2],
             fontFamily: 'monospace, monospace',
+            transition: 'all .2s ease',
+            ':hover':{
+              filter: 'saturate(150%), contrast(125%)'
+            }
           }}
         >
           <div sx={{display: 'flex', alignItems: 'center'}}>
             <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorA, backgroundColor: colorB, boxShadow: 'inset 0 0 0 2px currentColor', width: 32, height: 32, borderRadius: '100%', mr: 2 }}> L<sup>c</sup></div><span sx={{ width: '6ch', textAlign: 'right', }}>{apcaScoreFg.toFixed(2)}</span>
             <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorB, backgroundColor: colorA, width: 32, height: 32, borderRadius: '50%', mr: 2, ml: 4 }}> L<sup>c</sup></div><span sx={{ width: '6ch', textAlign: 'right', }}>{apcaScoreBg.toFixed(2)}</span>
           </div>
-        </p>
+        </a>
         <div
           sx={{
             ml: 'auto',
@@ -198,10 +207,9 @@ const Page = ({ pinnedColor }) => {
          bg: 'tranparent',
            //boxShadow: 'inset 0 0 0 1px currentColor',
            maxWidth: '64rem',
-          pt: 5,
     }}>
          <div sx={{ 
-           display: 'none',
+           display: 'flex',
            flexWrap: 'wrap',
            gap: '8px', 
            filter: 'saturate(100%)',
@@ -220,23 +228,17 @@ const Page = ({ pinnedColor }) => {
             <div sx={{ '> a': {
              // boxShadow: '0 0 2px 4px rgba(0,0,0,.125)'
             }}}><ColorLink color='white' /></div>
-            <ColorLink color='black' />
-            <ColorLink color='blue' />
-            <ColorLink color='dodgerblue' />
-            <ColorLink color='skyblue' />
-            <ColorLink color='indigo' />
-            <ColorLink color='blueviolet' />
-            <ColorLink color='fuchsia' />
-            <ColorLink color='violet' />
-            <ColorLink color='hotpink' />
-            <ColorLink color='red' />
-            <ColorLink color='orangered' />
-            <ColorLink color='orange' />
-            <ColorLink color='gold' />
-            <ColorLink color='yellow' />
-            <ColorLink color='springgreen' />
-            <ColorLink color='teal' />
-            <ColorLink color='cyan' />
+            <ColorLink color='#eeeeee' />
+            <ColorLink color='#333333' />
+            <ColorLink color='#000000' />
+            <ColorLink color='#8200e8' />
+            <ColorLink color='#c91313' />
+            <ColorLink color='#ffd700' />
+            <ColorLink color='#ffff00' />
+            <ColorLink color='#00ff7f' />
+            <ColorLink color='#000080' />
+            <ColorLink color='#0011ff' />
+            <ColorLink color='#00ffff' />
          </div>
       </section>
 
