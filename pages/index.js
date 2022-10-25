@@ -112,6 +112,7 @@ const Page = ({ pinnedColor }) => {
           alignItems: 'center',
           gridTemplateColumns: '1fr 1fr 1fr',
           backgroundColor: colorPair[1],
+          color: colorPair[0],
         }}
       >
         <h1
