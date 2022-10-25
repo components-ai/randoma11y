@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import namer from 'color-namer'
+import { ArrowRight } from 'react-feather'
 
 const Sparkline = () => {
   return (
@@ -191,7 +192,28 @@ const FormInput = ({label = 'Input Label', ...props}) => {
             <span>No</span>
           </label>
     </fieldset>
-
+    <div
+      sx={{ 
+        mt: 3,
+        WebkitAppearance: 'none',
+        appearance: 'none',
+        background: 'transparent',
+        color: 'currentColor',
+        borderRadius: '9999px',
+        width: '100%',
+        border: 0,
+        boxShadow: '0 0 0 1px currentColor',
+        py: 2,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        fontWeight: 400,
+      }}
+    >
+    Click Here
+    <ArrowRight size={20} strokeWidth={3} />
+    </div>
     </form>
   )
 }

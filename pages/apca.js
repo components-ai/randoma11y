@@ -104,17 +104,24 @@ const Page = ({ pinnedColor }) => {
     <Layout colorPair={colorPair}>
       <header
         sx={{
-          display: 'sticky',
+          position: 'sticky',
           top: 0,
           borderBottom: 'thin solid',
           display: 'grid',
           alignItems: 'center',
           gridTemplateColumns: '1fr 1fr 1fr',
+          backgroundColor: colorPair[1]
         }}
       >
+      <Link href={{
+        pathname: '/',
+        query: { color: colorPair[0] },
+      }} scroll={false}
+      >
         <a
-          href='/'
+          title="Home"
           sx={{
+            cursor: 'pointer',
             textDecoration: 'none',
             display: 'flex',
             m: 0,
@@ -144,10 +151,16 @@ const Page = ({ pinnedColor }) => {
           ></span>
           <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </a>
+    </Link>
+      <Link href={{
+        pathname: '/',
+        query: { color: colorPair[0] },
+      }} scroll={false}
+      >
         <a
-          href='/'
           title='Switch algorithms'
           sx={{
+            cursor: 'pointer',
             textDecoration: 'none',
             color: 'currentColor',
             my: 0,
@@ -167,6 +180,7 @@ const Page = ({ pinnedColor }) => {
             <div sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', color: colorB, backgroundColor: colorA, width: 32, height: 32, borderRadius: '50%', mr: 2, ml: 4 }}> L<sup>c</sup></div><span sx={{ width: '6ch', textAlign: 'right', }}>{apcaScoreBg.toFixed(2)}</span>
           </div>
         </a>
+    </Link>
         <div
           sx={{
             ml: 'auto',

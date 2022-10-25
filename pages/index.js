@@ -103,12 +103,13 @@ const Page = ({ pinnedColor }) => {
     <Layout colorPair={colorPair}>
       <header
         sx={{
-          display: 'sticky',
+          position: 'sticky',
           top: 0,
           borderBottom: 'thin solid',
           display: 'grid',
           alignItems: 'center',
           gridTemplateColumns: '1fr 1fr 1fr',
+          backgroundColor: colorPair[1],
         }}
       >
         <h1
@@ -139,8 +140,12 @@ const Page = ({ pinnedColor }) => {
           ></span>
           <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </h1>
+      <Link href={{
+        pathname: '/apca',
+        query: { color: colorPair[0] },
+      }} scroll={false}
+      >
         <a
-          href='/apca'  
           title='Switch algorithm'
           sx={{
             mx: 'auto',
@@ -156,6 +161,7 @@ const Page = ({ pinnedColor }) => {
             lineHeight: 1,
             gap: '16px',
             transition: 'all .2s ease',
+              cursor: 'pointer',
             ':hover':{
               filter: 'saturate(150%), contrast(125%)'
             }
@@ -167,6 +173,7 @@ const Page = ({ pinnedColor }) => {
             <span sx={{ bg: colorA, color: colorB  , px: 2, py: 0, borderRadius: '6px' }}>{contrastScore}</span>
           </span>
         </a>
+      </Link>
         <div
           sx={{
             ml: 'auto',
