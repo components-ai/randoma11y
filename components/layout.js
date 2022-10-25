@@ -62,7 +62,7 @@ export default ({ children, colorPair = [] }) => {
           },
           "*": {
             boxSizing: "border-box",
-            transition: 'color .2s ease, background-color .3s ease',
+            transition: 'color .2s ease, background-color .25s ease',
           },
         }}
       />
@@ -79,6 +79,8 @@ export default ({ children, colorPair = [] }) => {
       <footer
         sx={{
           borderTop: "thin solid",
+          color: "currentColor",
+          borderTopColor: 'currentCOlor',
           textAlign: "center",
           py: 4,
           px: 4,
