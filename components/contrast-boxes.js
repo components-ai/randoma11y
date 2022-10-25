@@ -150,6 +150,7 @@ const FormInput = ({label = 'Input Label', ...props}) => {
         <input name='apples' type='radio' 
           checked
           sx={{ 
+            color: 'inherit',
             appearance: 'none', 
             WebkitAppearance: 'none', 
             p: 0,
