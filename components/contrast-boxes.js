@@ -235,7 +235,7 @@ const Progress = () => {
     <label sx={{ display: 'block', my: 3, }}>
       <span sx={{ display: 'block', mb: '8px', }}>Progress</span>
     <div sx={{ height: '16px', boxShadow: '0 0 0 1px currentColor', color: 'inherit' }}>
-      <div sx={{ width: '44%', height: '100%', backgroundColor: 'currentColor', }}></div>
+      <div sx={{ width: '84%', height: '100%', backgroundColor: 'currentColor', }}></div>
     </div>
     </label>
   )
@@ -289,7 +289,7 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
     <Border />
     <BorderStripe />
 <pre sx={{ mt: 3, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
-      <code>
+      <code sx={{ fontSize: 1, }}>
       {`.theme-alt {`}<br />
         &nbsp;&nbsp;color: {color};<br />
         &nbsp;&nbsp;background-color: {backgroundColor};<br />
@@ -337,7 +337,7 @@ const ContrastBox = ({ color, backgroundColor }) => (
     <Border />
     <BorderStripe />
     <pre sx={{ mt: 3, borderRadius: '0px', py: 3, px: 3, boxShadow: '0 0 0 1px currentColor' }}>
-      <code>
+      <code sx={{ fontSize: 1, }}>
       {`.theme {`}<br />
         &nbsp;&nbsp;color: {color};<br />
         &nbsp;&nbsp;background-color: {backgroundColor};<br />
