@@ -85,13 +85,13 @@ const Page = ({ pinnedColor }) => {
         <a
           onClick={() => skiplink(color)}
           sx={{
-          display: 'block',
-          textDecoration: 'none',
-          backgroundColor: color,
-          borderRadius: '9999px',
-          height: ['32px', '24px', '24px'],
-          aspectRatio: '1/1',
-          cursor: 'pointer',
+            display: 'block',
+            textDecoration: 'none',
+            backgroundColor: color,
+            borderRadius: '9999px',
+            height: ['32px', '24px', '24px'],
+            aspectRatio: '1/1',
+            cursor: 'pointer',
         }} {...props} />
       </Link>
     )

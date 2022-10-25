@@ -12,7 +12,7 @@ import Button from '../components/button'
 import ContrastBoxes from '../components/contrast-boxes'
 
 
-import { vote, getColorPair } from '../lib'
+import { vote, getColorPair } from '../lib/contrast'
 
 const Page = ({ pinnedColor }) => {
   const [colorPair, setColorPair] = useState([])
