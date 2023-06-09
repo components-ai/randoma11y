@@ -107,7 +107,7 @@ export default ({ children, colorPair = [] }) => {
             href="https://components.ai/notes/computational-theming"
             title="Computational Theming"
           >
-            Computational Theming: Color
+            About
           </a>
           <a
             sx={{ ml: 'auto', color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
