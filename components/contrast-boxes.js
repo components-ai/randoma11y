@@ -293,14 +293,6 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
       outline: '1px solid currentColor',
     }}
   >
-    <h4
-      sx={{
-        m: 0,
-        fontSize: 3,
-      }}
-    >
-      {namer(color).pantone[0].name}
-    </h4>
       <h3
         sx={{
           m: 0,
@@ -341,14 +333,6 @@ const ContrastBox = ({ color, backgroundColor }) => (
       outline: '1px solid currentColor',
     }}
   >
-    <h4
-      sx={{
-        m: 0,
-        fontSize: 3
-      }}
-    >
-      {namer(color).pantone[0].name}
-    </h4>
     <h3
       sx={{
         m: 0,

@@ -237,24 +237,24 @@ const Page = ({ pinnedColor }) => {
          }}>
             <div sx={{ '> a': {
              // boxShadow: '0 0 2px 4px rgba(0,0,0,.125)'
-            }}}><ColorLink color='white' /></div>
-            <ColorLink color='black' />
-            <ColorLink color='blue' />
-            <ColorLink color='dodgerblue' />
-            <ColorLink color='skyblue' />
-            <ColorLink color='indigo' />
-            <ColorLink color='blueviolet' />
-            <ColorLink color='fuchsia' />
-            <ColorLink color='violet' />
-            <ColorLink color='hotpink' />
-            <ColorLink color='red' />
-            <ColorLink color='orangered' />
-            <ColorLink color='orange' />
-            <ColorLink color='gold' />
-            <ColorLink color='yellow' />
-            <ColorLink color='springgreen' />
-            <ColorLink color='teal' />
-            <ColorLink color='cyan' />
+            }}}><ColorLink color='#ffffff' /></div>
+            <ColorLink color='#000000' />
+            <ColorLink color='#0000ff' />
+            <ColorLink color='#1e90ff' />
+            <ColorLink color='#87ceeb' />
+            <ColorLink color='#4b0082' />
+            <ColorLink color='#8a2be2' />
+            <ColorLink color='#ff00ff' />
+            <ColorLink color='#ee82ee' />
+            <ColorLink color='#ff69b4' />
+            <ColorLink color='#ff0000' />
+            <ColorLink color='#ff4500' />
+            <ColorLink color='#ffa500' />
+            <ColorLink color='#ffd700' />
+            <ColorLink color='#ffff00' />
+            <ColorLink color='#00ff7f' />
+            <ColorLink color='#008080' />
+            <ColorLink color='#00ffff' />
          </div>
       </section>
 
