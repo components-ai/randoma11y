@@ -6,13 +6,13 @@ import { ArrowRight } from 'react-feather'
 
 const Sparkline = () => {
   return (
-<article sx={{ mt: 4, borderRadius: '0px', py: 2, px: 3, boxShadow: '0 0 0 1px currentColor' }}><div sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><dl><dt sx={{ fontSize: 1 }}>Label</dt><dd sx={{ ml: 0, pl: 0, fontWeight: 700, fontSize: '40px' }}>9,173</dd></dl><svg width="160" height="60"><path d="M0 45C5.145 45 9.555 20.4 14.7 20.4C19.845 20.4 24.255 35.400000000000006 29.4 35.400000000000006C34.544999999999995 35.400000000000006 38.955 6.600000000000001 44.099999999999994 6.600000000000001C49.245 6.600000000000001 53.654999999999994 22.200000000000003 58.8 22.200000000000003C63.945 22.200000000000003 68.355 45 73.5 45C78.645 45 83.05499999999999 33.6 88.19999999999999 33.6C93.34499999999998 33.6 97.755 52.8 102.89999999999999 52.8C108.04499999999999 52.8 112.455 38.400000000000006 117.6 38.400000000000006C122.74499999999999 38.400000000000006 127.15499999999999 54.6 132.29999999999998 54.6C137.445 54.6 141.855 27.6 147 27.6C147 27.6 147 27.6 147 27.6 " fill="none" fillOpacity="1" stroke="currentColor" strokeOpacity="1" strokeLinecap="butt" strokeWidth="2" strokeDasharray="0"></path></svg></div></article>
+<article sx={{ mt: 4, borderRadius: '6px', py: 2, px: 3, boxShadow: '0 0 0 1px currentColor' }}><div sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><dl><dt sx={{ fontSize: 1 }}>Label</dt><dd sx={{ ml: 0, pl: 0, fontWeight: 700, fontSize: '40px' }}>9,173</dd></dl><svg width="160" height="60"><path d="M0 45C5.145 45 9.555 20.4 14.7 20.4C19.845 20.4 24.255 35.400000000000006 29.4 35.400000000000006C34.544999999999995 35.400000000000006 38.955 6.600000000000001 44.099999999999994 6.600000000000001C49.245 6.600000000000001 53.654999999999994 22.200000000000003 58.8 22.200000000000003C63.945 22.200000000000003 68.355 45 73.5 45C78.645 45 83.05499999999999 33.6 88.19999999999999 33.6C93.34499999999998 33.6 97.755 52.8 102.89999999999999 52.8C108.04499999999999 52.8 112.455 38.400000000000006 117.6 38.400000000000006C122.74499999999999 38.400000000000006 127.15499999999999 54.6 132.29999999999998 54.6C137.445 54.6 141.855 27.6 147 27.6C147 27.6 147 27.6 147 27.6 " fill="none" fillOpacity="1" stroke="currentColor" strokeOpacity="1" strokeLinecap="butt" strokeWidth="2" strokeDasharray="0"></path></svg></div></article>
   )
 }
 
 const Scale = () => {
   return (
-  <section sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'stretch', gap: '1px', height: '32px'}}>
+  <section sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'stretch', gap: '1px', height: '32px', borderRadius: '6px', overflow: 'hidden' }}>
      <div sx={{ opacity: '100%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
      <div sx={{ opacity: '90%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
      <div sx={{ opacity: '80%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
@@ -23,6 +23,14 @@ const Scale = () => {
      <div sx={{ opacity: '30%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
      <div sx={{ opacity: '20%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
      <div sx={{ opacity: '10%', bg: 'currentColor', height: '100%', width: '100%' }}> </div>
+  </section>
+  )
+}
+const Gradient = ({color, background}) => {
+  return (
+  <section sx={{ mt: 3, width: '100%', display: 'flex', alignItems: 'stretch', gap: '8px', height: '256px'}}>
+    <div sx={{ borderRadius: '6px', height: '100%', width: '100%', backgroundImage: 'linear-gradient(45deg, '+color+' 0%, '+background+' 100%)', }} />
+    <div sx={{ borderRadius: '6px', height: '100%', width: '100%', backgroundImage: 'linear-gradient(135deg, '+color+' 0%, '+background+' 100%)'}} />
   </section>
   )
 }
@@ -125,6 +133,7 @@ const FormInput = ({label = 'Input Label', ...props}) => {
         borderWidth: '0px',
         boxShadow: '0 0 0 1px currentColor',
         borderStyle: 'solid',
+        borderRadius: '6px',
         background: 'transparent',
         color: 'inherit',
         padding: '8px',
@@ -258,8 +267,8 @@ const Progress = () => {
   return (
     <label sx={{ display: 'block', my: 3, }}>
       <span sx={{ display: 'block', mb: '8px', }}>Progress</span>
-    <div sx={{ height: '16px', boxShadow: '0 0 0 1px currentColor', color: 'inherit' }}>
-      <div sx={{ width: '84%', height: '100%', backgroundColor: 'currentColor', }}></div>
+    <div sx={{ height: '16px', borderRadius: '6px', boxShadow: '0 0 0 1px currentColor', color: 'inherit' }}>
+      <div sx={{ width: '84%', height: '100%', borderTopLeftRadius: '6px', borderBottomLeftRadius: '6px', backgroundColor: 'currentColor', }}></div>
     </div>
     </label>
   )
@@ -290,7 +299,9 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
       color,
       backgroundColor,
       p: [3, 4, '80px'],
-      outline: '1px solid currentColor',
+      boxShadow: '0 0 0 1px currentColor',
+      borderRadius: '12px',
+
     }}
   >
       <h3
@@ -317,9 +328,10 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
     <Text />
     <Progress />
     <FormInput />
+    <Sparkline />
     <Symbols />
     <Scale />
-    <Sparkline />
+    <Gradient color={color} background={backgroundColor} />
     <BorderCenterGradient />
   </div>
 )
@@ -330,7 +342,8 @@ const ContrastBox = ({ color, backgroundColor }) => (
       color,
       backgroundColor,
       p: [3, 4, '80px'],
-      outline: '1px solid currentColor',
+      boxShadow: '0 0 0 1px currentColor',
+      borderRadius: '12px',
     }}
   >
     <h3
@@ -357,9 +370,10 @@ const ContrastBox = ({ color, backgroundColor }) => (
     <Text />
     <Progress />
     <FormInput />
+    <Sparkline />
     <Symbols />
     <Scale />
-    <Sparkline />
+    <Gradient color={color} background={backgroundColor} />
     <BorderCenterGradient />
   </div>
 )
