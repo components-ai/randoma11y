@@ -103,6 +103,13 @@ export default ({ children, colorPair = [] }) => {
             Components AI
           </a>
           <a
+            sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
+            href="https://components.ai/notes/computational-theming"
+            title="Computational Theming"
+          >
+            Computational Theming: Color
+          </a>
+          <a
             sx={{ ml: 'auto', color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
             href="https://github.com/components-ai/randoma11y"
             title="GitHub"
