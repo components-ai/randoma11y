@@ -97,10 +97,17 @@ export default ({ children, colorPair = [] }) => {
           © Copyright 2016-2023{" "}
           <a
             sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
-            href="https://components.ai"
-            title="Made by Components AI"
+            href="https://mrmrs.cc"
+            title=""
           >
-            Components AI
+           Adam Morse
+          </a>
+          <a
+            sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
+            href="https://johno.com"
+            title=""
+          >
+            John Otander
           </a>
           <a
             sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
