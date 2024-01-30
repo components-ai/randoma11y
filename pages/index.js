@@ -45,7 +45,6 @@ const Page = ({ pinnedColor }) => {
         fetchCount();
     }, []);
 
-  const [theme, setTheme] = useState(theme1)
 
   const [colorPair, setColorPair] = useState([])
   const newColorPair = () => {
