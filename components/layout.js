@@ -94,7 +94,7 @@ export default ({ children, colorPair = [] }) => {
             gap: '1em',
           }}
         >
-          © Copyright 2016-2023{" "}
+          © Copyright 2016-2024{" "}
           <a
             sx={{ color: colorPair[0], fontWeight: "bold", textDecoration: 'none', }}
             href="https://mrmrs.cc"
