@@ -70,11 +70,7 @@ const Page = ({ pinnedColor }) => {
   const handleKeyUp = (e) => {
     const { key } = e
 
-    if (key === 'ArrowUp') {
-      upvote()
-    } else if (key === 'ArrowDown') {
-      downvote()
-    } else if (key === 'ArrowRight') {
+    if (key === 'ArrowRight') {
       skip()
     } else {
       return
@@ -175,7 +171,7 @@ const Page = ({ pinnedColor }) => {
               borderRadius: '9999px',
             }}
           ></span>
-          <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
+          <span sx={{ fontSize: '10px', display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </h1>
       <Link href={{
         pathname: '/apca',
@@ -313,7 +309,7 @@ const Page = ({ pinnedColor }) => {
           >
             <Sliders size={20} strokeWidth={2} /> Advanced Editor
           </a>
-          <p style={{ textAlign: 'center', fontSize: '10px' }}>{count} generated accessible combinations</p>
+          <p style={{ textAlign: 'center', fontSize: '10px' }}>{count} generated combinations</p>
      </div>
     
     </Layout>

@@ -15,9 +15,40 @@ import ContrastBoxes from '../components/contrast-boxes'
 import { vote, getColorPair } from '../lib/contrast'
 
 const Page = ({ pinnedColor }) => {
+    const [count, setCount] = useState(0);
+
+    const durableObjectName = 'RANDOMA11Y'; // Replace with the actual name of your Durable Object
+
+    const fetchCount = async () => {
+        try {
+            const response = await fetch(`https://ts-gen-count.adam-f8f.workers.dev/?name=${durableObjectName}`);
+            const data = await response.text();
+            setCount(data);
+        } catch (error) {
+            console.error('Error fetching count:', error);
+        }
+    };
+
+    const handleIncrement = async () => {
+        try {
+            await fetch(`https://ts-gen-count.adam-f8f.workers.dev/increment?name=${durableObjectName}`, {
+                method: 'POST',
+            });
+            fetchCount(); // Update count after increment
+        } catch (error) {
+            console.error('Error incrementing count:', error);
+        }
+    };
+
+
+    useEffect(() => {
+        fetchCount();
+    }, []);
+
   const [colorPair, setColorPair] = useState([])
   const newColorPair = () => {
     setColorPair(getColorPair(pinnedColor))
+    handleIncrement()
   }
 
   const upvote = async () => {
@@ -152,7 +183,7 @@ const Page = ({ pinnedColor }) => {
               borderRadius: '9999px',
             }}
           ></span>
-          <span sx={{ display: ['none', 'block', 'block'] }}>Randoma11y</span>
+          <span sx={{ fontSize: '10px', display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </a>
     </Link>
       <Link href={{
@@ -280,6 +311,7 @@ const Page = ({ pinnedColor }) => {
           >
             <Sliders size={20} strokeWidth={2} /> Advanced Editor
           </a>
+          <p style={{ textAlign: 'center', fontSize: '10px' }}>{count} generated combinations</p>
      </div>
     
     </Layout>
