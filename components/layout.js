@@ -88,7 +88,7 @@ export default ({ children, colorPair = [] }) => {
       >
         <div
           sx={{
-            fontSize: [0, 0, 2],
+            fontSize: [0, 0, 1],
             display: 'flex', 
             alignItems: 'center',
             gap: '1em',
