@@ -202,6 +202,7 @@ const Page = ({ pinnedColor }) => {
             backgroundColor={colorB}
             borderColor={colorB}
             onClick={skip}
+            title='Press the right arrow key to generate a new color combo'
           >
             New colors
             <ArrowRightCircle size={20} />
