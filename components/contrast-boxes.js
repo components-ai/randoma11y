@@ -95,7 +95,7 @@ const Symbols = ({ }) => {
   )
 }
 
-const Badge = ({ }) => {
+const Badge = ({ color, backgroundColor}) => {
   return (
     <section sx={{ display: 'flex', gap: '.5em', alignItems: 'center', mt: 3,   }}>
       <div sx={{ 
@@ -108,6 +108,15 @@ const Badge = ({ }) => {
       <time sx={{ fontFamily: 'monospace,monospace', fontSize: 0,}}>18 JUN 2020</time>
       <span sx={{
         ml: 'auto',
+        borderRadius: '9999px', 
+        backgroundColor: color,
+      color: backgroundColor,
+        px: 3, py: 1, 
+        fontSize: '12px' 
+      }}>
+        Badge
+      </span>
+      <span sx={{
         borderRadius: '9999px', 
         boxShadow: '0 0 0 1px currentColor', 
         px: 3, py: 1, 
@@ -203,12 +212,13 @@ const FormInput = ({label = 'Input Label', ...props}) => {
             <span>No</span>
           </label>
     </fieldset>
+    <section sx={{display: 'flex', gap: '16px' }}>
     <div
       sx={{ 
         mt: 3,
         WebkitAppearance: 'none',
         appearance: 'none',
-        background: 'transparent',
+        background: props.backgroundColor,
         color: 'currentColor',
         borderRadius: '9999px',
         width: '100%',
@@ -220,11 +230,35 @@ const FormInput = ({label = 'Input Label', ...props}) => {
         justifyContent: 'center',
         gap: '8px',
         fontWeight: 400,
+        fontSize: 1,
+      }}
+    >
+    Cancel
+    </div>
+    <div
+      sx={{ 
+        mt: 3,
+        WebkitAppearance: 'none',
+        appearance: 'none',
+        background: props.color,
+        color: props.backgroundColor,
+        borderRadius: '9999px',
+        width: '100%',
+        border: 0,
+        boxShadow: '0 0 0 1px currentColor',
+        py: 2,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '8px',
+        fontWeight: 400,
+        fontSize: 1,
       }}
     >
     Click Here
-    <ArrowRight size={20} strokeWidth={3} />
+    <ArrowRight size={16} strokeWidth={3} />
     </div>
+      </section>
     </form>
   )
 }
@@ -324,10 +358,10 @@ const ContrastBox1 = ({ color, backgroundColor }) => (
       </code>
     </pre>
     <Quote />
-    <Badge />
+    <Badge color={color} backgroundColor={backgroundColor} />
     <Text />
     <Progress />
-    <FormInput />
+    <FormInput color={color} backgroundColor={backgroundColor} />
     <Sparkline />
     <Symbols />
     <Scale />
@@ -366,10 +400,10 @@ const ContrastBox = ({ color, backgroundColor }) => (
       </code>
     </pre>
     <Quote />
-    <Badge />
+    <Badge color={color} backgroundColor={backgroundColor} />
     <Text />
     <Progress />
-    <FormInput />
+    <FormInput color={color} backgroundColor={backgroundColor} />
     <Sparkline />
     <Symbols />
     <Scale />

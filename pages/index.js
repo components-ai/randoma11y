@@ -120,11 +120,15 @@ const Page = ({ pinnedColor }) => {
             textDecoration: 'none',
             backgroundColor: color,
             borderRadius: '9999px',
-            height: ['32px', '24px', '24px'],
+            fontSize: 0,
+            height: ['12px', '12px', '12px'],
             aspectRatio: '1/1',
             cursor: 'pointer',
-            boxShadow: '0 0 0 2px rgba(0,0,0,0), 0 0 0 4px rgba(0,0,0,0)',
+                  //boxShadow: '0 0 0 2px '+colorB+', 0 0 0 3px '+colorB,
             transition: 'all .2s ease',
+            ':hover': { filter: 'brightness(120%)'}
+                  //':active': {boxShadow: '0 0 0 2px '+colorB+', 0 0 0 3px '+color},
+
         }} {...props} />
       </Link>
     )
@@ -171,7 +175,7 @@ const Page = ({ pinnedColor }) => {
               borderRadius: '9999px',
             }}
           ></span>
-          <span sx={{ fontSize: '10px', display: ['none', 'block', 'block'] }}>Randoma11y</span>
+          <span sx={{ fontSize: '12px', display: ['none', 'block', 'block'] }}>Randoma11y</span>
         </h1>
       <Link href={{
         pathname: '/apca',
@@ -190,9 +194,9 @@ const Page = ({ pinnedColor }) => {
             fontSize: [0, 1, 3],
             fontFamily: 'monospace, monospace',
             display: 'flex',
-            alignItems: 'stretch',
+            alignItems: 'center',
             lineHeight: 1,
-            gap: '16px',
+            gap: '12px',
             transition: 'all .2s ease',
               cursor: 'pointer',
             ':hover':{
@@ -202,8 +206,8 @@ const Page = ({ pinnedColor }) => {
           }}
         >
           <span>{contrastRatio}{' '}</span>
-          <span sx={{ display: ['inline-block', 'inline-block', 'inline-block'] }}>
-            <span sx={{ bg: colorA, color: colorB  , px: 2, py: 0, borderRadius: '6px' }}>{contrastScore}</span>
+      <span sx={{ display: 'inline-flex', alignItems: 'center' }}>
+            <span sx={{ bg: colorA, color: colorB  , fontFamily: 'monospace', letterSpacing: '0.025em', px: 2, py: 1, lineHeight: 1, display: 'flex', alignItems: 'center', borderRadius: '9999px', opacity: .75, fontSize: 0, fontWeight: 400 }}>{contrastScore}</span>
           </span>
         </a>
       </Link>
@@ -251,7 +255,8 @@ const Page = ({ pinnedColor }) => {
     }}>
          <div sx={{ 
            display: 'flex',
-           flexWrap: 'wrap',
+           alignItems: 'center',
+           flexWrap: ['wrap','nowrap'],
            gap: '8px', 
            filter: 'saturate(100%)',
            transition: 'filter .25s ease',
@@ -261,9 +266,10 @@ const Page = ({ pinnedColor }) => {
            ':hover': {
              filter: 'saturate(100%)'
            },
-           py: 4,
            px: 4,
+           height: '64px',
            mx: 'auto',
+           overflow:'hidden',
            justifyContent: 'center',
          }}>
             <div sx={{ '> a': {
@@ -286,6 +292,7 @@ const Page = ({ pinnedColor }) => {
             <ColorLink color='#00ff7f' />
             <ColorLink color='#008080' />
             <ColorLink color='#00ffff' />
+            <ColorLink color='' children='Clear' />
          </div>
       </section>
 

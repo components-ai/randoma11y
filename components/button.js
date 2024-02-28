@@ -14,7 +14,7 @@ const Button = ({ color, backgroundColor, borderColor, ...props }) => (
       borderRadius: '0px',
       px: 3,
       py: 2,
-      fontSize: [1,1,2],
+      fontSize: [0,0,1],
       fontWeight: 500,
       transition: 'filter .25s ease',
       display: 'flex',
