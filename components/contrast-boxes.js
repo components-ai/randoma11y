@@ -166,7 +166,7 @@ const FormInput = ({label = 'Input Label', ...props}) => {
       <legend sx={{ all: 'unset', mb: 2 }}>Do you have a favorite color?</legend>
       <label sx={{ gap: '4px', display: 'inline-flex', alignItems: 'center', lineHeight: 1, ':hover > input': { boxShadow: 'inset 0 0 0 2px currentColor', transition: 'all .2s ease' } }}>
         <input name='apples' type='radio' 
-          checked
+          defaultChecked
           sx={{ 
             color: 'inherit',
             appearance: 'none', 

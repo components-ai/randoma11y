@@ -10,8 +10,7 @@ import Layout from '../components/layout'
 import Button from '../components/button'
 import ContrastBoxes from '../components/contrast-boxes'
 
-
-import { vote, getColorPair } from '../lib'
+import { getColorPair } from '../lib'
 
 const Page = ({ pinnedColor }) => {
 
@@ -40,7 +39,6 @@ const Page = ({ pinnedColor }) => {
         }
     };
 
-
     useEffect(() => {
         fetchCount();
     }, []);
@@ -53,14 +51,6 @@ const Page = ({ pinnedColor }) => {
 
   }
 
-  const upvote = async () => {
-    await vote({ upvote: true, colorPair })
-    newColorPair()
-  }
-  const downvote = async () => {
-    await vote({ upvote: false, colorPair })
-    newColorPair()
-  }
   const skip = () => {
     newColorPair()
   }
@@ -219,11 +209,6 @@ const Page = ({ pinnedColor }) => {
             alignItems: 'stretch',
           }}
         >
-          <div sx={{ display: 'none' }}>
-            <Button color={colorB} backgroundColor={colorA} onClick={upvote}>
-              <ArrowUpCircle size={24} /> Upvote
-            </Button>
-          </div>
           <Button
             color={colorA}
             backgroundColor={colorB}
@@ -234,17 +219,6 @@ const Page = ({ pinnedColor }) => {
             New colors
             <ArrowRightCircle size={20} />
           </Button>
-          <div sx={{ display: 'none' }}>
-            <Button
-              color={colorA}
-              backgroundColor={colorB}
-              onClick={downvote}
-              sx={{ ml: 3 }}
-            >
-              <ArrowDownCircle size={24} />
-              Downvote
-            </Button>
-          </div>
         </div>
       </header>
       <section sx={{
